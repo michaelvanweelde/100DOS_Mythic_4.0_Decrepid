@@ -10,7 +10,7 @@
   <input name='attr_faction' type='radio' value='6' class='background_switch_6' display=none hidden />
   <div class='background radius_border_heading'>
 
-<!-- Test. -->
+
 
     <!-- character information grid ________________________________________________ -->
 
@@ -40,17 +40,17 @@
       <!-- third column of grid: header logo -->
       <div class='gs13'>
         <input name='attr_faction' type='checkbox' value='1' class='hidden hider' checked />
-        <div><img name='logo' src='https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Logos/mythic_logo.png?raw=true' height='130' width='130' /></div>
+        <div><img name='logo' src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/mythic_logo.png?raw=true' height='130' width='130' /></div>
         <input name='attr_faction' type='checkbox' value='2' class='hidden hider' />
-        <div><img name='logo' src='https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Logos/faction_logo_UNSC.png?raw=true' height='130' width='130' /></div>
+        <div><img name='logo' src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/faction_logo_UNSC.png?raw=true' height='130' width='130' /></div>
         <input name='attr_faction' type='checkbox' value='3' class='hidden hider' />
-        <div><img name='logo' src='https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Logos/faction_logo_Covenant_coloured.png?raw=true' height='130' width='130' /></div>
+        <div><img name='logo' src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/faction_logo_Covenant_coloured.png?raw=true' height='130' width='130' /></div>
         <input name='attr_faction' type='checkbox' value='4' class='hidden hider' />
-        <div><img name='logo' src='https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Logos/faction_logo_Forerunner.png?raw=true' height='130' width='130' /></div>
+        <div><img name='logo' src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/faction_logo_Forerunner.png?raw=true' height='130' width='130' /></div>
         <input name='attr_faction' type='checkbox' value='5' class='hidden hider' />
-        <div><img name='logo'  src='https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Logos/faction_Logo_Banished.png?raw=true' height='130' width='130' /></div>
+        <div><img name='logo'  src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/faction_Logo_Banished.png?raw=true' height='130' width='130' /></div>
         <input name='attr_faction' type='checkbox' value='6' class='hidden hider' />
-        <div><img name='logo'  src='https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Logos/mythic_logo.png?raw=true' height='130' width='130' /></div>
+        <div><img name='logo'  src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/mythic_logo.png?raw=true' height='130' width='130' /></div>
       </div>
       <!-- REPLACE LOGO SOURCE ONCE COMPLETE: src='images/mythic_logo.png' -->
       <!-- fourth column of grid: right-side fields -->
@@ -234,8 +234,8 @@
 
       <div class='initiative_container'>
         <button name='initiative' type='roll' class='clear bttn_top_padding'
-        value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{initiative=@{initmod0}(@{initmod1}+@{initmod2}+@{initmod3})&{tracker}]]}}'>
-        Initiative|<input name='attr_init_total' value='floor(@{initmod2}+@{initmod3})' class='input_background input_init_background' disabled /></button>
+        value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{initiative=@{initmod0}(@{initmod1}+@{initmod2}+@{initmod3}+[[((((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) + @{AGI_mythic}) - abs((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) - @{AGI_mythic})) / 2)*@{initmod4}]])&{tracker}]]}}'>
+        Initiative|<input name='attr_init_total' value='floor(@{initmod2}+@{initmod3}+ ((((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) + @{AGI_mythic}) - abs((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) - @{AGI_mythic})) / 2)*@{initmod4} )' class='input_background input_init_background' disabled /></button>
         <select name='attr_initmod1' class='init_field'>
           <option value='1d10' selected='selected'>Standard</option>
           <option value='2d10k1'>Fast Foot</option>
@@ -2242,7 +2242,15 @@
   <h3>Calculate The Negative Impact Of Fatigue Automatically</h3>
   <select name='attr_settings_fatigue' class='full_width edge_padding'>
     <option value='0'selected='selected'>Auto calculate Fatigue</option>
-    <option value='1'>Dont auto calculate Fatigue</option>
+    <option value='1'>auto calculate Fatigue Enduring</option>
+    <option value='2'>Dont auto calculate Fatigue</option>
+  </select>
+  <br>
+
+  <h3>Add half mythic agility to initiative</h3>
+  <select name='attr_initmod4' class='full_width edge_padding'>
+    <option value='1'selected='selected'>Half mythic agility</option>
+    <option value='0'>No mythic agility (3.7 legacy)</option>
   </select>
   <br>
 
@@ -2272,8 +2280,8 @@
 
     <div class='initiative_container'>
       <button name='initiative' type='roll' class='clear bttn_top_padding'
-      value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{initiative=@{initmod0}(@{initmod1}+@{initmod2}+@{initmod3})&{tracker}]]}}'>
-      Initiative|<input name='attr_init_total' value='floor(@{initmod2}+@{initmod3})' class='input_background input_init_background' disabled /></button>
+      value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{initiative=@{initmod0}(@{initmod1}+@{initmod2}+@{initmod3}+[[((((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) + @{AGI_mythic}) - abs((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) - @{AGI_mythic})) / 2)]]*@{initmod4})&{tracker}]]}}'>
+      Initiative|<input name='attr_init_total' value='floor(@{initmod2}+@{initmod3}+ ((((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) + @{AGI_mythic}) - abs((((floor(@{AGI_mythic}/2) + 1) + abs(floor(@{AGI_mythic}/2) - 1)) / 2) - @{AGI_mythic})) / 2)*@{initmod4} )' class='input_background input_init_background' disabled /></button>
       <select name='attr_initmod1' class='init_field'>
         <option value='1d10' selected='selected'>Standard</option>
         <option value='2d10k1'>Fast Foot</option>
@@ -2618,7 +2626,7 @@
   // ___________________________________________________________________________
   // ____________________Movement and Weight sheet worker_______________________
   // ___________________________________________________________________________
-  on('change:settings_race change:agi change:agi_mythic change:agi_advancement change:str change:str_mythic change:str_advancement change:tou change:tou_mythic change:tou_advancement', function() {
+  on('change:settings_race change:fatigue change:settings_fatigue change:agi change:agi_mythic change:agi_advancement change:str change:str_mythic change:str_advancement change:tou change:tou_mythic change:tou_advancement', function() {
     getAttrs([
     'settings_race',
     'agi',
@@ -2629,8 +2637,19 @@
     'str_advancement',
     'tou',
     'tou_mythic',
-    'tou_advancement'
+    'tou_advancement',
+    'fatigue',
+    'settings_fatigue'
     ], function(values) {
+      var fatigue = parseInt(values['fatigue'], 10) || 0;
+      var settings_fatigue = parseInt(values['settings_fatigue'], 10) || 0;
+      var fatigue_mod = 0;
+      if (settings_fatigue == 0) {
+        fatigue_mod = (fatigue * 5);
+        };
+      if (settings_fatigue == 1) {
+        fatigue_mod = (Math.max(0, (fatigue)-1) * 5);
+        };
       var settings_race = parseInt(values['settings_race'], 10) || 0;
       var agi = parseInt(values['agi'], 10) || 0;
       var agi_mythic = parseInt(values['agi_mythic'], 10) || 0;
@@ -2641,11 +2660,13 @@
       var tou = parseInt(values['tou'], 10) || 0;
       var tou_mythic = parseInt(values['tou_mythic'], 10) || 0;
       var tou_advancement = parseInt(values['tou_advancement'], 10) || 0;
-      var weight_mod = str + str_advancement + tou + tou_advancement + (str_mythic + tou_mythic) * 10;
-      var move_mod = Math.floor((agi + agi_advancement) / 10 + agi_mythic);
-      var str_mod = (str + str_advancement) / 10;
-      var agi_mod = (agi + agi_advancement) / 10;
-      var tou_mod = Math.floor((tou + tou_advancement) / 10);
+      var weight_mod = str + str_advancement + tou + tou_advancement - (fatigue_mod * 2) + (str_mythic + tou_mythic) * 10;
+      var move_mod = Math.floor((agi + agi_advancement - fatigue_mod) / 10 + agi_mythic);
+      var str_mod = (str + str_advancement - fatigue_mod) / 10;
+      var agi_mod = (agi + agi_advancement - fatigue_mod) / 10;
+      var tou_mod = Math.floor((tou + tou_advancement - fatigue_mod) / 10);
+
+
 
       // normal no modifiers ___________________________________________________
       if(settings_race != 6) {
@@ -2701,11 +2722,17 @@
         });
       }
 
-      // Jackal T'vaoan (agi to jump * 4) ______________________________________
+      // Jackal T'vaoan (mod to jump * 4) ______________________________________
       if(settings_race == 4) {
         setAttrs({
-          jump_move:(str_mod / 4 * 4)
+          jump_move:(str_mod / 4 * 3),
+          leap_move: (agi_mod / 2 * 3) // modifier plus 4, sum halved
         });
+        if(str_mod >= agi_mod) {
+          setAttrs({
+            leap_move: (str_mod / 2 * 3)
+          });
+        }
       }
 
       // Mgalekgolo (Hunter) (weight = 4000, double agi to charge/run) _________
@@ -2743,7 +2770,7 @@
     });
   });
 
-  on('change:fatigue', function() {
+  on('change:fatigue change:settings_fatigue', function() {
     getAttrs([
     'fatigue',
     'settings_fatigue'
@@ -2753,6 +2780,11 @@
       if (settings_fatigue == 0) {
         setAttrs({
           fatigue_mod: (-fatigue * 5)
+        });
+      }
+      if (settings_fatigue == 1) {
+        setAttrs({
+          fatigue_mod: (- Math.max(0, (fatigue)-1) * 5)
         });
       }
     });
@@ -3056,14 +3088,14 @@
         <div class="sheet-template-header">{{character}} scatters </div>
         <div class="sheet-template-content">
           <div class="sheet-template-row template-center">Range: {{scatter-range}} meters </div>
-          {{#rollBetween() scatter-direction 1 2}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/1-2-scatter-N.png?raw=true">{{/rollBetween() scatter-direction 1 2}}
-          {{#rollBetween() scatter-direction 3 3}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/3-scatter-NE.png?raw=true">{{/rollBetween() scatter-direction 3 3}}
-          {{#rollBetween() scatter-direction 4 4}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/4-scatter-E.png?raw=true">{{/rollBetween() scatter-direction 4 4}}
-          {{#rollBetween() scatter-direction 5 5}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/5-scatter-SE.png?raw=true">{{/rollBetween() scatter-direction 5 5}}
-          {{#rollBetween() scatter-direction 6 7}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/6-7-scatter-S.png?raw=true">{{/rollBetween() scatter-direction 6 7}}
-          {{#rollBetween() scatter-direction 8 8}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/8-scatter-SW.png?raw=true">{{/rollBetween() scatter-direction 8 8}}
-          {{#rollBetween() scatter-direction 9 9}}   <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/9-scatter-W.png?raw=true">{{/rollBetween() scatter-direction 9 9}}
-          {{#rollBetween() scatter-direction 10 10}} <img src="https://github.com/olosinno/Halo_Mythic_3dot5/blob/master/images/Scatter/10-scatter-NW.png?raw=true">{{/rollBetween() scatter-direction 10 10}}
+          {{#rollBetween() scatter-direction 1 2}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/1-2-scatter-N.png?raw=true">{{/rollBetween() scatter-direction 1 2}}
+          {{#rollBetween() scatter-direction 3 3}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/3-scatter-NE.png?raw=true">{{/rollBetween() scatter-direction 3 3}}
+          {{#rollBetween() scatter-direction 4 4}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/4-scatter-E.png?raw=true">{{/rollBetween() scatter-direction 4 4}}
+          {{#rollBetween() scatter-direction 5 5}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/5-scatter-SE.png?raw=true">{{/rollBetween() scatter-direction 5 5}}
+          {{#rollBetween() scatter-direction 6 7}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/6-7-scatter-S.png?raw=true">{{/rollBetween() scatter-direction 6 7}}
+          {{#rollBetween() scatter-direction 8 8}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/8-scatter-SW.png?raw=true">{{/rollBetween() scatter-direction 8 8}}
+          {{#rollBetween() scatter-direction 9 9}}   <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/9-scatter-W.png?raw=true">{{/rollBetween() scatter-direction 9 9}}
+          {{#rollBetween() scatter-direction 10 10}} <img src="https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Scatter/10-scatter-NW.png?raw=true">{{/rollBetween() scatter-direction 10 10}}
 
         </div>
         {{/scatter-range}}

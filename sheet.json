@@ -1,6 +1,6 @@
 {
-	"html": "HaloMythic3dot5.html",
-	"css": "HaloMythic3dot5.css",
+	"html": "HaloMythic4dot0.html",
+	"css": "HaloMythic4dot0.css",
 	"authors": "Omran Losinno, Michael van Weelde",
 	"roll20userid": "557736, 1503191",
 	"preview": "preview.png",
@@ -46,10 +46,24 @@
 			"type": "select",
 			"options": [
 				"Auto calculate Fatigue|0",
-				"Dont auto calculate Fatigue|1"
+				"auto calculate Fatigue Enduring|1",
+				"Dont auto calculate Fatigue|2"
 			],
 			"default": "0",
 			"description": "Select the fatigue calculation setting to use on the character sheet."
+		},
+
+		{
+			"attribute": "initmod4",
+			"displayname": "Add half mythic agility to initiative",
+			"type": "select",
+			"options": [
+				"Half mythic agility|1",
+				"No mythic agility (3.7 legacy)|0"
+			],
+			"default": "1",
+			"description": "Select the initiative calculation setting to use on the character sheet."
 		}
+
 	]
 }
