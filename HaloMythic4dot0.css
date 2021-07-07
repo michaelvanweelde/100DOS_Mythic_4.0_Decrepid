@@ -675,6 +675,7 @@ ______________________________ start of equipment tab __________________________
 .sheet-equipment_gear_gs7 { margin-top: 5px !important; }
 .sheet-equipment_gear {
 	display: grid;
+	padding-right: 2px;
 	grid-template-columns: auto 60px 80px 80px 80px 80px 25px;
 	grid-template-areas:
 	'eg1 eg2 eg3 eg4 eg5 eg6 eg7';
@@ -701,6 +702,7 @@ ______________________________ start of equipment tab __________________________
 .sheet-equipment_armor_gs2 { background: #475f85; padding: 2px; }
 .sheet-equipment_armor_gs3 { background: #475f85; padding: 2px; }
 .sheet-equipment_armor_grid {
+	width: 100%;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-columns: 300px 90px auto;
@@ -708,8 +710,6 @@ ______________________________ start of equipment tab __________________________
 
 .sheet-equipment_permutations_grid {
 	margin: 0px 50.5px 0.6px 0px;
-	position: relative;
-	z-index: 0;
 	display: grid;
 	grid-template-columns: auto 100px 40px 40px;
 }
