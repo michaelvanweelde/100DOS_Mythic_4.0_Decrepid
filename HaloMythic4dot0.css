@@ -998,9 +998,18 @@ the appropriate element is displayed on a 4 all elements are hidden */
 /* ______________________________ end of vehicles tab ______________________________
 ______________________________ start of NPC sheet overrides ___________________________________________________________ */
 
+.sheet-NPC_stats_fields { height: 26px !important; font-size: 16px; color: white; width: auto;}
+.sheet-NPC_stats_grid{
+	padding-top: 2px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 18px auto;
+}
+
 .sheet-NPC_core_grid{
 	display: grid;
-	grid-template-columns: 290px 5px auto
+	grid-template-columns: 290px 5px auto;
 }
 
 .sheet-NPC_characteristics_fields { height: 26px !important; font-size: 16px; color: white;}
@@ -1010,6 +1019,20 @@ ______________________________ start of NPC sheet overrides ____________________
 	display: grid;
 	grid-template-columns: 60px 40px 10px 40px 10px 60px 60px;
 }
+.sheet-NPC_pageselect{
+	display: grid;
+	grid-template-columns: 70px 70px 120px;
+}
+
+.sheet-NPC_medical {
+	background: #475f85;
+	margin-right: 10px;
+	padding: 2px 2px 2px 2px;
+	color: white;
+	font-family: Saira Semi Condensed;
+}
+
+.sheet-NPC_margin{ margin-right: 10px; }
 
 .sheet-NPC_textfield_override { height:300px }
 
