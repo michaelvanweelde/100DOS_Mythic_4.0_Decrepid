@@ -738,7 +738,27 @@
           <input name='attr_mod3_nav_space' type='checkbox' value='40' class='skills_item' />
           <button type='roll' name='nav_space_roll' value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{roll-name=nav_space}} {{roll=[[floor(([[@{mod1_nav_space}]]+@{mod2_nav_space}+[[@{mod3_nav_space} -20]]+@{inlinemod-toggle}-1d100)/10)]]}}' class='clear'><input name='attr_nav_space_total' value='@{mod1_nav_space}+@{mod2_nav_space}+@{mod3_nav_space}-20' class='input_background' disabled /></button>
         </div>
-
+        <div class='skill_grid'>
+          <p class='bold_text skills_text'>Nav Slipspace</p>
+          <p class='bold_text skills_text'></p>
+          <select name='attr_mod1_nav_slipspace' class='full_width full_height'>
+            <option value='@{STR} + @{STR_advancement} + @{fatigue_mod}' >STR</option>
+            <option value='@{TOU} + @{TOU_advancement} + @{fatigue_mod}' >TOU</option>
+            <option value='@{AGI} + @{AGI_advancement} + @{fatigue_mod}' >AGI</option>
+            <option value='@{WFR} + @{WFR_advancement} + @{fatigue_mod}' >WFR</option>
+            <option value='@{WFM} + @{WFM_advancement} + @{fatigue_mod}' >WFM</option>
+            <option value='@{INT} + @{INT_advancement} + @{fatigue_mod}' >INT</option>
+            <option value='@{PER} + @{PER_advancement} + @{fatigue_mod}' selected='selected'>PER</option>
+            <option value='@{CR} + @{CR_advancement} + @{fatigue_mod}' >CR</option>
+            <option value='@{CH} + @{CH_advancement} + @{fatigue_mod}' >CH</option>
+            <option value='@{LD} + @{LD_advancement} + @{fatigue_mod}' >LD</option>
+          </select>
+          <input name='attr_mod2_nav_slipspace' type='number' value='0' />
+          <input name='attr_mod3_nav_slipspace' type='checkbox' value='20' class='skills_item' />
+          <input name='attr_mod3_nav_slipspace' type='checkbox' value='30' class='skills_item' />
+          <input name='attr_mod3_nav_slipspace' type='checkbox' value='40' class='skills_item' />
+          <button type='roll' name='nav_slipspace_roll' value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{roll-name=nav_slipspace}} {{roll=[[floor(([[@{mod1_nav_slipspace}]]+@{mod2_nav_slipspace}+[[@{mod3_nav_slipspace} -20]]+@{inlinemod-toggle}-1d100)/10)]]}}' class='clear'><input name='attr_nav_slipspace_total' value='@{mod1_nav_slipspace}+@{mod2_nav_slipspace}+@{mod3_nav_slipspace}-20' class='input_background' disabled /></button>
+        </div>
         <div class='skill_grid'>
           <p class='bold_text skills_text'>Negotiation</p>
           <p class='bold_text skills_text'></p>
