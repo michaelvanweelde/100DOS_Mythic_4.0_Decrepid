@@ -4,7 +4,8 @@ input.sheet-background_switch_3:checked ~ div.sheet-background { background-imag
 input.sheet-background_switch_4:checked ~ div.sheet-background { background-image: linear-gradient(#C45911, #833C0B); color: white; }
 input.sheet-background_switch_5:checked ~ div.sheet-background { background-image: linear-gradient(#aa3f3c, #772C2A); color: white; }
 input.sheet-background_switch_6:checked ~ div.sheet-background { background-image: linear-gradient(#266daa, #17466e); color: white; }
-input.sheet-background_switch_7:checked ~ div.sheet-background { background: white; 		color: black;}
+input.sheet-background_switch_7:checked ~ div.sheet-background { background-image: linear-gradient(#266daa, #17466e); color: white; }
+input.sheet-background_switch_8:checked ~ div.sheet-background { background: white; 		color: black;}
 
 input.sheet-background_override_switch_1:checked ~ div.sheet-background { background-image: linear-gradient(#738132, #4b5320); color: white; }
 input.sheet-background_override_switch_2:checked ~ div.sheet-background { background-image: linear-gradient(#8f489d, #59357a); color: white; }
@@ -26,7 +27,7 @@ input.sheet-background_override_switch_10:checked ~ div.sheet-background { backg
 
 /* Import multiple Google font families; Should ALWAYS be done at the TOP of the page! */
 @import url('https://fonts.googleapis.com/css?family=Orbitron|Saira+Semi+Condensed&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
 /* All input elements that are of type number or type text */
 select,
 input[type='number'],
@@ -37,6 +38,7 @@ button[type='action'] {
 	font-family: Saira Semi Condensed;
 	text-align: center;
 }
+
 
 /* All horizontal rule elements receive the following CSS property. */
 hr { border-top: 1px dotted black; }
@@ -83,8 +85,8 @@ h3 { background: #394C6A; }
 textarea {
 	background: #394C6A;
 	color: white;
-	font-family: Saira Semi Condensed;
-	font-size: 14px;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 13px;
 	resize: vertical;
 	width: calc(100% - 10px);
 }
@@ -107,10 +109,10 @@ ______________________________ start of multipurpose or special-use classes such
 .sheet-full_width_49px { width: calc(100% - 49px); }
 .sheet-full_width_30px { width: calc(100% - 30px); }
 
-.sheet-margin_adjust { margin-top: -23px; margin-bottom: 4px; text-align: right; }
-.sheet-margin_adjust2 { margin-top: -22px; margin-bottom: 3px; margin-left: -25px; text-align: right; }
-.sheet-margin_adjust_wep { margin-top: -21px; margin-bottom: 2px; margin-left: 3px; text-align: right; }
-.sheet-margin_adjust_wep2 { margin-top: -20px; margin-bottom: 2px; margin-left: -22px; text-align: right; }
+.sheet-margin_adjust { 			margin-top: -23px; margin-bottom: 4px; text-align: right; font-size: 16px;}
+.sheet-margin_adjust2 { 		margin-top: -22px; margin-bottom: 4px; margin-left: -25px; 	text-align: right; font-size: 16px;}
+.sheet-margin_adjust_wep { 	margin-top: -20px; margin-bottom: 2px; margin-left: 3px; 		text-align: right; font-size: 16px;}
+.sheet-margin_adjust_wep2 { margin-top: -20px; margin-bottom: 2px; margin-left: -22px; 	text-align: right; font-size: 16px;}
 .sheet-radius_border_right { border-bottom-right-radius: 7px !important; }
 .sheet-radius_border_right_wep { border-bottom-right-radius: 10px !important; }
 .sheet-radius_border_left { border-bottom-left-radius: 10px !important; }
@@ -675,6 +677,7 @@ ______________________________ start of equipment tab __________________________
 .sheet-equipment_gear_gs7 { margin-top: 5px !important; }
 .sheet-equipment_gear {
 	display: grid;
+	padding-right: 2px;
 	grid-template-columns: auto 60px 80px 80px 80px 80px 25px;
 	grid-template-areas:
 	'eg1 eg2 eg3 eg4 eg5 eg6 eg7';
@@ -701,6 +704,7 @@ ______________________________ start of equipment tab __________________________
 .sheet-equipment_armor_gs2 { background: #475f85; padding: 2px; }
 .sheet-equipment_armor_gs3 { background: #475f85; padding: 2px; }
 .sheet-equipment_armor_grid {
+	width: 100%;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-columns: 300px 90px auto;
@@ -708,8 +712,6 @@ ______________________________ start of equipment tab __________________________
 
 .sheet-equipment_permutations_grid {
 	margin: 0px 50.5px 0.6px 0px;
-	position: relative;
-	z-index: 0;
 	display: grid;
 	grid-template-columns: auto 100px 40px 40px;
 }
@@ -997,9 +999,18 @@ the appropriate element is displayed on a 4 all elements are hidden */
 /* ______________________________ end of vehicles tab ______________________________
 ______________________________ start of NPC sheet overrides ___________________________________________________________ */
 
+.sheet-NPC_stats_fields { height: 26px !important; font-size: 16px; color: white; width: auto;}
+.sheet-NPC_stats_grid{
+	padding-top: 2px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 18px auto;
+}
+
 .sheet-NPC_core_grid{
 	display: grid;
-	grid-template-columns: 290px 5px auto
+	grid-template-columns: 290px 5px auto;
 }
 
 .sheet-NPC_characteristics_fields { height: 26px !important; font-size: 16px; color: white;}
@@ -1009,6 +1020,20 @@ ______________________________ start of NPC sheet overrides ____________________
 	display: grid;
 	grid-template-columns: 60px 40px 10px 40px 10px 60px 60px;
 }
+.sheet-NPC_pageselect{
+	display: grid;
+	grid-template-columns: 70px 67px 120px;
+}
+
+.sheet-NPC_medical {
+	background: #475f85;
+	margin-right: 10px;
+	padding: 2px 2px 2px 2px;
+	color: white;
+	font-family: Saira Semi Condensed;
+}
+
+.sheet-NPC_margin{ margin-right: 10px; }
 
 .sheet-NPC_textfield_override { height:300px }
 
