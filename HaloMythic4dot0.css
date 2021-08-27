@@ -1,10 +1,12 @@
 input.sheet-background_switch_1:checked ~ div.sheet-background { background: white }
 input.sheet-background_switch_2:checked ~ div.sheet-background { background-image: linear-gradient(#738132, #4b5320); color: white; }
-input.sheet-background_switch_3:checked ~ div.sheet-background { background-image: linear-gradient(#8f489d, #59357a); color: white; }
-input.sheet-background_switch_4:checked ~ div.sheet-background { background-image: linear-gradient(#C45911, #833C0B); color: white; }
-input.sheet-background_switch_5:checked ~ div.sheet-background { background-image: linear-gradient(#aa3f3c, #772C2A); color: white; }
 input.sheet-background_switch_6:checked ~ div.sheet-background { background-image: linear-gradient(#266daa, #17466e); color: white; }
-input.sheet-background_switch_7:checked ~ div.sheet-background { background-image: linear-gradient(#266daa, #17466e); color: white; }
+input.sheet-background_switch_7:checked ~ div.sheet-background { background-image: linear-gradient(#9c8c60, #695d3f); color: white; }
+input.sheet-background_switch_3:checked ~ div.sheet-background { background-image: linear-gradient(#8f489d, #59357a); color: white; }
+input.sheet-background_switch_5:checked ~ div.sheet-background { background-image: linear-gradient(#aa3f3c, #772C2A); color: white; }
+input.sheet-background_switch_4:checked ~ div.sheet-background { background-image: linear-gradient(#C45911, #833C0B); color: white; }
+
+
 input.sheet-background_switch_8:checked ~ div.sheet-background { background: white; 		color: black;}
 
 input.sheet-background_override_switch_1:checked ~ div.sheet-background { background-image: linear-gradient(#738132, #4b5320); color: white; }
@@ -12,11 +14,13 @@ input.sheet-background_override_switch_2:checked ~ div.sheet-background { backgr
 input.sheet-background_override_switch_3:checked ~ div.sheet-background { background-image: linear-gradient(#C45911, #833C0B); color: white; }
 input.sheet-background_override_switch_4:checked ~ div.sheet-background { background-image: linear-gradient(#aa3f3c, #772C2A); color: white; }
 input.sheet-background_override_switch_5:checked ~ div.sheet-background { background-image: linear-gradient(#266daa, #17466e); color: white; }
-input.sheet-background_override_switch_6:checked ~ div.sheet-background { background: white; 		color: black;}
-input.sheet-background_override_switch_7:checked ~ div.sheet-background { background: #4d4d4d; 	color: white;}
-input.sheet-background_override_switch_8:checked ~ div.sheet-background { background: #2E5984; 	color: white;}
-input.sheet-background_override_switch_9:checked ~ div.sheet-background { background: #BFA52B; 	color: white;}
-input.sheet-background_override_switch_10:checked ~ div.sheet-background { background: #696969; 	color: white;}
+input.sheet-background_override_switch_6:checked ~ div.sheet-background { background-image: linear-gradient(#9c8c60, #695d3f); color: white; }
+input.sheet-background_override_switch_7:checked ~ div.sheet-background { background: white; 		color: black;}
+input.sheet-background_override_switch_8:checked ~ div.sheet-background { background: #4d4d4d; 	color: white;}
+input.sheet-background_override_switch_9:checked ~ div.sheet-background { background: #2E5984; 	color: white;}
+input.sheet-background_override_switch_10:checked ~ div.sheet-background { background: #BFA52B; 	color: white;}
+input.sheet-background_override_switch_11:checked ~ div.sheet-background { background: #696969; 	color: white;}
+input.sheet-background_override_switch_12:checked ~ div.sheet-background { background: #ff00ff; 	color: black;}
 
 
 
@@ -1065,7 +1069,7 @@ ______________________________ start of rolltemplate ___________________________
 
 .sheet-rolltemplate-mythic .sheet-template-content {
 	background: #506b95;
-	background-image: url(https://cdn.discordapp.com/attachments/676016722939084800/689454608283729965/yxN94xs.png);
+	background-image: url(https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Assets/Mythic_rolltemplate_background.png?raw=true);
 	border-radius: 0px 0px 10px 10px;
 	border-left: 2px solid grey;
 	border-right: 2px solid grey;
