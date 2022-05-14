@@ -1046,6 +1046,7 @@ ______________________________ start of NPC sheet overrides ____________________
 	padding: 2px 2px 2px 2px;
 	color: white;
 	font-family: Saira Semi Condensed;
+	height: 110px;
 }
 
 .sheet-NPC_margin{ margin-right: 10px; }
