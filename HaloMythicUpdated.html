@@ -1396,483 +1396,105 @@
 
       <div class='medicalg1 medicalG'>
         Finger / Toe
-        <select name='attr_medical_finger/toe' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-15</option>
-          <option value='2'>16-30</option>
-          <option value='3'>31-45</option>
-          <option value='4'>46+</option>
-        </select>
-        <div>
-          <input name='attr_medical_finger/toe' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_finger/toe' type='checkbox' value='1' class='hidden hider' />
-          <div>-1 WFM + WFR to Finger,<br>-2 Agility to Toe</div>
-          <input name='attr_medical_finger/toe' type='checkbox' value='2' class='hidden hider' />
-          <div>-2 WFM + WFR to Finger,<br>-4 Agility to Toe</div>
-          <input name='attr_medical_finger/toe' type='checkbox' value='3' class='hidden hider' />
-          <div>Body Location damaged.<br>No longer usable. -3 Strength to Finger, -3 Agility to Toe</div>
-          <input name='attr_medical_finger/toe' type='checkbox' value='4' class='hidden hider' />
-          <div>Body Locaton destroyed,<br>-4 Strength to Finger, -4 Agility to Toe</div>
-        </div>
+        <input name='attr_medical_g1' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g1_text" class='medical_effect'></textarea>
+
       </div>
 
       <div class='medicalg2 medicalG'>
         Heart
-        <select name='attr_medical_heart' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-30</option>
-          <option value='3'>31-40</option>
-          <option value='4'>41-59</option>
-          <option value='5'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_heart' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_heart' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Strength + Toughness + Agility</div>
-          <input name='attr_medical_heart' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Strength + Toughness + Agility</div>
-          <input name='attr_medical_heart' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Strength + Toughness + Agility</div>
-          <input name='attr_medical_heart' type='checkbox' value='4' class='hidden hider' />
-          <div>Body Location damaged.<br>+10 Fatigue, -15 Strength + Toughness + Agility</div>
-          <input name='attr_medical_heart' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Locaton destroyed,<br>instant death</div>
-        </div>
+        <input name='attr_medical_g2' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g2_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg3 medicalG'>
         Neck
-        <select name='attr_medical_neck' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_neck' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_neck' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Toughness</div>
-          <input name='attr_medical_neck' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Toughness</div>
-          <input name='attr_medical_neck' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Toughness</div>
-          <input name='attr_medical_neck' type='checkbox' value='4' class='hidden hider' />
-          <div>+1 Fatigue, -10 Toughness</div>
-          <input name='attr_medical_neck' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>-20 Toughness, Paralyzed and Helpless</div>
-          <input name='attr_medical_neck' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>instant death</div>
-        </div>
+        <input name='attr_medical_g3' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g3_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg4 medicalG'>
         Skull / Brain
-        <select name='attr_medical_skull/brain' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-30</option>
-          <option value='3'>31-40</option>
-          <option value='4'>41-59</option>
-          <option value='5'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_skull/brain' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_skull/brain' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Perception + Intellect + WFM + WFR</div>
-          <input name='attr_medical_skull/brain' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Perception + Intellect + WFM + WFR</div>
-          <input name='attr_medical_skull/brain' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Perception + Intellect + WFM + WFR</div>
-          <input name='attr_medical_skull/brain' type='checkbox' value='4' class='hidden hider' />
-          <div>Body Location damaged.<br>+10 Fatigue, -15 Perception + Intellect + WFM + WFR</div>
-          <input name='attr_medical_skull/brain' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location destroyed,<br>instant death</div>
-        </div>
+        <input name='attr_medical_g4' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g4_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg5 medicalG'>
         Nose / Ear
-        <select name='attr_medical_nose/ear' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Perception to smelling or hearing Perception tests</div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Perception to smelling or hearing Perception tests</div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Perception to smelling or hearing Perception tests</div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='4' class='hidden hider' />
-          <div>-15 Perception to smelling or hearing Perception tests</div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location broken.<br>-20 Perception to smelling or hearing Perception tests</div>
-          <input name='attr_medical_nose/ear' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>cannot make or halve Perception to smelling or hearing tests</div>
-        </div>
+        <input name='attr_medical_g5' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g5_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg6 medicalG'>
-        Limb (Arm / Leg)
-        <select name='attr_medical_arm/leg' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Strength to Arm or<br>-2 Agility to Leg</div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Strength to Arm, or<br>-5 Agility to Leg</div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Strength to Arm, or<br>-10 Agility to Leg</div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='4' class='hidden hider' />
-          <div>-15 Strength to Arm, or<br>-15 Agility to Leg</div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged. -15 Strength to Arm, or -15 Agility to Leg. -5 to limb's Actions</div>
-          <input name='attr_medical_arm/leg' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>limb cannot be used<br>+3 Fatigue</div>
-        </div>
+        Chest
+        <input name='attr_medical_g17' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g17_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg7 medicalG'>
         Small / Large Intestines
-        <select name='attr_medical_small/large_intestines' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='0' class='hidden hider' checked >
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Toughness + Agility</div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='2' class='hidden hider' />
-          <div>-4 Toughness + Agility</div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='3' class='hidden hider' />
-          <div>-6 Toughness + Agility</div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='4' class='hidden hider' />
-          <div>-10 Toughness + Agility</div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>+2 Fatigue, -15 Toughness + Agility</div>
-          <input name='attr_medical_small/large_intestines' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>+5 Fatigue, -20 Toughness + Agility</div>
-        </div>
+        <input name='attr_medical_g7' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g7_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg8 medicalG'>
         Lungs
-        <select name='attr_medical_lung' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_lung' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_lung' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Toughness, stunned for<br>(D5-Toughness Modifier) rounds</div>
-          <input name='attr_medical_lung' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Toughness, stunned for<br>(2D5-Toughness Modifier) rounds</div>
-          <input name='attr_medical_lung' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Toughness, stunned for<br>(3D5-Toughness Modifier) rounds</div>
-          <input name='attr_medical_lung' type='checkbox' value='4' class='hidden hider' />
-          <div>-15 Toughness, stunned for<br>(4D5-Toughness Modifier) rounds</div>
-          <input name='attr_medical_lung' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>-20 Toughness, stunned for<br>(5D5-Toughness Modifier) rounds</div>
-          <input name='attr_medical_lung' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>-25 Toughness, stunned for<br>(6D5-Toughness Modifier) rounds.<br>Character will take 2 wounds whenever they take a Movement Action quicker than 2 Meters per Turn.</div>
-        </div>
+        <input name='attr_medical_g8' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g8_text" class='medical_effect_long'></textarea>
       </div>
 
       <div class='medicalg9 medicalG'>
-        Kidney / Stomach / Liver / Spleen
-        <select name='attr_medical_kidney/stomach/liver/spleen' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Toughness + Agility</div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='2' class='hidden hider' />
-          <div>-4 Toughness + Agility</div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='3' class='hidden hider' />
-          <div>-6 Toughness + Agility</div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='4' class='hidden hider' />
-          <div>-10 Toughness + Agility</div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>+1 Fatigue, -15 Toughness + Agility</div>
-          <input name='attr_medical_kidney/stomach/liver/spleen' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>+5 Fatigue, -20 Toughness + Agility</div>
-        </div>
+        Kidney / Stomach / Liver
+        <input name='attr_medical_g9' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g9_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg10 medicalG'>
         Knee / Ankle / Shoulder / Elbow
-        <select name='attr_medical_knee/ankle/shoulder/elbow' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Strength + Agility</div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='2' class='hidden hider' />
-          <div>-4 Strength + Agility</div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='3' class='hidden hider' />
-          <div>-6 Strength + Agility</div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='4' class='hidden hider' />
-          <div>-10 Strength + Agility</div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>+1 Fatigue, -15 Strength + Agility</div>
-          <input name='attr_medical_knee/ankle/shoulder/elbow' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>+5 Fatigue, -20 Strength + Agility</div>
-        </div>
+        <input name='attr_medical_g10' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g10_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg11 medicalG'>
-        Eye
-        <select name='attr_medical_eye' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_eye' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_eye' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Perception to seeing tests</div>
-          <input name='attr_medical_eye' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 Perception to seeing tests</div>
-          <input name='attr_medical_eye' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 Perception to seeing tests</div>
-          <input name='attr_medical_eye' type='checkbox' value='4' class='hidden hider' />
-          <div>-12 Perception to seeing tests</div>
-          <input name='attr_medical_eye' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location broken.<br>-15 Perception to seeing tests</div>
-          <input name='attr_medical_eye' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>Character blinded for D5 rounds. -20 Perception to seeing tests</div>
-        </div>
+        Foot
+        <input name='attr_medical_g15' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g15_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg12 medicalG'>
         Mouth
-        <select name='attr_medical_mouth' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_mouth' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_mouth' type='checkbox' value='1' class='hidden hider' />
-          <div>-1 Toughness, -5 to speaking tests</div>
-          <input name='attr_medical_mouth' type='checkbox' value='2' class='hidden hider' />
-          <div>-3 Toughness, -5 to speaking tests</div>
-          <input name='attr_medical_mouth' type='checkbox' value='3' class='hidden hider' />
-          <div>-5 Toughness, -10 to speaking tests</div>
-          <input name='attr_medical_mouth' type='checkbox' value='4' class='hidden hider' />
-          <div>-8 Toughness, -10 to speaking tests</div>
-          <input name='attr_medical_mouth' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location broken.<br>+1 Fatigue, -12 Toughness, -15 to speaking tests</div>
-          <input name='attr_medical_mouth' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>+2 Fatigue, -15 Toughness, -15 to speaking tests</div>
-        </div>
+        <input name='attr_medical_g12' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g12_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg13 medicalG'>
         Hand
-        <select name='attr_medical_hand' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_hand' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_hand' type='checkbox' value='1' class='hidden hider' />
-          <div>-3 to both Warfare stats if hand is used to Attack</div>
-          <input name='attr_medical_hand' type='checkbox' value='2' class='hidden hider' />
-          <div>-5 to both Warfare stats if hand is used to Attack</div>
-          <input name='attr_medical_hand' type='checkbox' value='3' class='hidden hider' />
-          <div>-10 to both Warfare stats if hand is used to Attack</div>
-          <input name='attr_medical_hand' type='checkbox' value='4' class='hidden hider' />
-          <div>-13 to both Warfare stats if hand is used to Attack</div>
-          <input name='attr_medical_hand' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location broken.<br>-15 to both Warfare stats if hand is used to Attack</div>
-          <input name='attr_medical_hand' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>Character cannot use the hand for any Actions</div>
-        </div>
+        <input name='attr_medical_g13' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g13_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg14 medicalG'>
         Chin / Jaw / Cheek
-        <select name='attr_medical_chin/jaw/cheek' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Toughness</div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='2' class='hidden hider' />
-          <div>-4 Toughness, -5 to speaking tests</div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='3' class='hidden hider' />
-          <div>-6 Toughness, -10 to speaking tests</div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='4' class='hidden hider' />
-          <div>+1 Fatigue, -10 Toughness, -10 to speaking tests</div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>+2 Fatigue, -15 Toughness, -15 to speaking tests</div>
-          <input name='attr_medical_chin/jaw/cheek' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>+3 Fatigue, -20 Toughness, -20 to speaking tests</div>
-        </div>
+        <input name='attr_medical_g14' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g14_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg15 medicalG'>
-        Foot
-        <select name='attr_medical_foot' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_foot' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_foot' type='checkbox' value='1' class='hidden hider' />
-          <div>-5 to Agility when figuring Movement Speed</div>
-          <input name='attr_medical_foot' type='checkbox' value='2' class='hidden hider' />
-          <div>-10 to Agility when figuring Movement Speed</div>
-          <input name='attr_medical_foot' type='checkbox' value='3' class='hidden hider' />
-          <div>-15 to Agility when figuring Movement Speed</div>
-          <input name='attr_medical_foot' type='checkbox' value='4' class='hidden hider' />
-          <div>-20 to Agility when figuring Movement Speed</div>
-          <input name='attr_medical_foot' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location broken.<br>-25 to Agility when figuring Movement Speed</div>
-          <input name='attr_medical_foot' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>Character cannot use the Foot for any Actions. Half Move reduced to 1 Meter, Full Move reduced to 2 Meters, Charge and Run are impossible.</div>
-        </div>
+        Eye
+        <input name='attr_medical_g11' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g11_text" class='medical_effect_long'></textarea>
       </div>
 
       <div class='medicalg16 medicalG'>
         Pelvis
-        <select name='attr_medical_pelvis' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_pelvis' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_pelvis' type='checkbox' value='1' class='hidden hider' />
-          <div>-1 Toughness, -4 Agility</div>
-          <input name='attr_medical_pelvis' type='checkbox' value='2' class='hidden hider' />
-          <div>-3 Toughness, -6 Agility</div>
-          <input name='attr_medical_pelvis' type='checkbox' value='3' class='hidden hider' />
-          <div>-6 Toughness, -8 Agility</div>
-          <input name='attr_medical_pelvis' type='checkbox' value='4' class='hidden hider' />
-          <div>-8 Toughness, -12 Agility</div>
-          <input name='attr_medical_pelvis' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location damaged.<br>-20 Toughness + Agility</div>
-          <input name='attr_medical_pelvis' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>-30 Toughness + Agility</div>
-        </div>
+        <input name='attr_medical_g16' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g16_text" class='medical_effect_long'></textarea>
       </div>
 
       <div class='medicalg17 medicalG'>
-        Chest
-        <select name='attr_medical_chest' class='full_width'>
-          <option selected='selected' value='0'>Nominal</option>
-          <option value='1'>01-20</option>
-          <option value='2'>21-25</option>
-          <option value='3'>26-30</option>
-          <option value='4'>31-40</option>
-          <option value='5'>41-59+</option>
-          <option value='6'>60+</option>
-        </select>
-        <div>
-          <input name='attr_medical_chest' type='checkbox' value='0' class='hidden hider' checked />
-          <div>No Effect / Healthy</div>
-          <input name='attr_medical_chest' type='checkbox' value='1' class='hidden hider' />
-          <div>-2 Toughness</div>
-          <input name='attr_medical_chest' type='checkbox' value='2' class='hidden hider' />
-          <div>-4 Toughness</div>
-          <input name='attr_medical_chest' type='checkbox' value='3' class='hidden hider' />
-          <div>-8 Toughness, stunned for 1D5 rounds</div>
-          <input name='attr_medical_chest' type='checkbox' value='4' class='hidden hider' />
-          <div>-10 Toughness, stunned for 2D5 rounds</div>
-          <input name='attr_medical_chest' type='checkbox' value='5' class='hidden hider' />
-          <div>Body Location broken.<br>-15 Toughness, stunned for 3D5 rounds</div>
-          <input name='attr_medical_chest' type='checkbox' value='6' class='hidden hider' />
-          <div>Body Location destroyed,<br>instant death</div>
-        </div>
+        Limb (Arm / Leg)
+        <input name='attr_medical_g6' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g6_text" class='medical_effect_long'></textarea>
       </div>
 
       <div class='medicalgT'>
@@ -1949,7 +1571,7 @@
         <!-- Every textarea element requires a closing tag; cannot be a void element. -->
         <textarea name='attr_medical_textfield' class='radius_border_bottom' placeholder='Not all injuries in 100DOS are lethal. Exhaustion, combat trauma, or exchanging blows with bare fists can all leave a character tattered, but intact. Fatigue measures the amount of non-lethal injury a character can take. For every level of Fatigue a Character has, they take a -5 Penalty to all Tests made.&#10;&#10;Once a Character surpasses their Toughness Modifier, multiplied by 2, in Fatigue, they fall into a coma. The Character’s coma will last one hour for every level of Fatigue the Character has. Every hour that passes, the level of Fatigue is reduced by one. The Character may wake up once their level of Fatigue is their Toughness Modifier or lower.'></textarea>
         <fieldset class='repeating_medical'>
-          <textarea name='attr_medical_textfield' class='radius_border_bottom'></textarea>
+          <textarea name='attr_medical_textfield' class='radius_border'></textarea>
         </fieldset>
       </div>
 
@@ -2490,7 +2112,7 @@
     <label><input type='checkbox' name='attr_npc_sheet' class='auto_margin collapsible_entity_switch select_button hidden' /><span class='select_text'>NPC Sheet</span></label>
     <button class='clear infographic_override' type='roll' name='autodamage' value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{avrdam= [[0+[[([[(?{Amount of hits|1}*?{Amount of D10s|0})d10]] + [[?{Amount of hits|1}*?{Base|0}]] - [[?{Amount of hits|1}*(?{Armor|0} - ?{Pierce|0})d1]])d1]]]]}}'>Auto-Damage</button>
     <button class='clear infographic_override' type='roll' name='multiroll' value='@{to-gm}&{template:mythic} {{character= @{character_name}}} {{multiroll= [[ ?{How many rolls?|1}d100<[[?{Using|Warfare Ranged, @{WFR} + @{WFR_advancement} + @{fatigue_mod} |Warfare Melee, @{WFM} + @{WFM_advancement} + @{fatigue_mod} |Strength, @{STR} + @{STR_advancement} + @{fatigue_mod} |Toughness, @{TOU} + @{TOU_advancement} + @{fatigue_mod}|Agility, @{AGI} + @{AGI_advancement} + @{fatigue_mod} |Intelligence, @{INT} + @{INT_advancement} + @{fatigue_mod} |Perception, @{PER} + @{PER_advancement} + @{fatigue_mod} |Courage, @{CR} + @{CR_advancement} + @{fatigue_mod} |Charisma, @{CH} + @{CH_advancement} + @{fatigue_mod}|Leadership, @{LD} + @{LD_advancement} + @{fatigue_mod} } + ?{Modifier|0} ]] ]] }}'>Multi-Roll</button>
-    <button class='clear infographic_override' type='roll' name='scatter' value="@{to-gm}&{template:mythic} {{character= @{character_name}}} {{scatter-range= 2}} {{scatter-direction=[[1d10]]}}">Scatter</button>
+    <button class='clear infographic_override' type='roll' name='scatter' value="@{to-gm}&{template:mythic} {{character= @{character_name}}} {{scatter-range= [[[[(abs(?{Degrees of Failiure|0})+floor(?{range from target|0}/100))*?{Target at|Normal range,1|Max range,2|Extreme range,4})]]?{Scatter Type|Explosives and thrown weapons,d5|Shots,d10}]]}} {{scatter-direction=[[1d10]]d1}}">Scatter</button>
   </div>
 
   <div class='infographic_grid'>
@@ -3916,6 +3538,302 @@
       });
     });
   });
+  // ___________________________________________________________________________
+  // ____________________Medical sheet worker______________________________________
+  // ___________________________________________________________________________
+  on('change:medical_g1 change:medical_g2 change:medical_g3 change:medical_g4 change:medical_g5 change:medical_g6 change:medical_g7 change:medical_g8 change:medical_g9 change:medical_g10 change:medical_g11 change:medical_g12 change:medical_g13 change:medical_g14 change:medical_g15 change:medical_g16 change:medical_g17', function() {
+    getAttrs(['medical_g1', 'medical_g2', 'medical_g3', 'medical_g4', 'medical_g5', 'medical_g6', 'medical_g7', 'medical_g8', 'medical_g9', 'medical_g10', 'medical_g11', 'medical_g12', 'medical_g13', 'medical_g14', 'medical_g15', 'medical_g16', 'medical_g17'], function(values) {
+      var g1 = parseInt(values['medical_g1'], 10) || 0;
+      var g2 = parseInt(values['medical_g2'], 10) || 0;
+      var g3 = parseInt(values['medical_g3'], 10) || 0;
+      var g4 = parseInt(values['medical_g4'], 10) || 0;
+      var g5 = parseInt(values['medical_g5'], 10) || 0;
+      var g6 = parseInt(values['medical_g6'], 10) || 0;
+      var g7 = parseInt(values['medical_g7'], 10) || 0;
+      var g8 = parseInt(values['medical_g8'], 10) || 0;
+      var g9 = parseInt(values['medical_g9'], 10) || 0;
+      var g10 = parseInt(values['medical_g10'], 10) || 0;
+      var g11 = parseInt(values['medical_g11'], 10) || 0;
+      var g12 = parseInt(values['medical_g12'], 10) || 0;
+      var g13 = parseInt(values['medical_g13'], 10) || 0;
+      var g14 = parseInt(values['medical_g14'], 10) || 0;
+      var g15 = parseInt(values['medical_g15'], 10) || 0;
+      var g16 = parseInt(values['medical_g16'], 10) || 0;
+      var g17 = parseInt(values['medical_g17'], 10) || 0;
+
+      //Finger / toe
+      if (g1 == 0)
+      {setAttrs({medical_g1_text: "No Effect / Healthy"});}
+      if (g1 >= 1 && g1 <= 30)
+      {setAttrs({medical_g1_text: "-1 WFM + WFR to Finger,-2 Agility to Toe"});}
+      if (g1 >= 31 && g1 <= 45)
+      {setAttrs({medical_g1_text: "-10 WFM and WFR to Finger, -10 Agility to Toe"});}
+      if (g1 >= 46 && g1 <= 60)
+      {setAttrs({medical_g1_text: "Body Location broken, damaged. No longer usable. -15 Strength to Finger, -15 Agility to Toe"});}
+      if (g1 >= 61)
+      {setAttrs({medical_g1_text: "Body Location Destroyed. -20 Strength to Finger, -20 Agility to Toe"});}
+
+      //Heart
+      if (g2 == 0)
+      {setAttrs({medical_g2_text: "No Effect / Healthy"});}
+      if (g2 >= 1 && g2 <= 25)
+      {setAttrs({medical_g2_text: "-10 Strength, Toughness, Agility"});}
+      if (g2 >= 26 && g2 <= 40)
+      {setAttrs({medical_g2_text: "-15 Strength, Toughness, Agility"});}
+      if (g2 >= 41 && g2 <= 55)
+      {setAttrs({medical_g2_text: "-20 Strength, Toughness, Agility"});}
+      if (g2 >= 56 && g2 <= 70)
+      {setAttrs({medical_g2_text: "-25 Strength, Toughness, Agility"});}
+      if (g2 >= 71 && g2 <= 95)
+      {setAttrs({medical_g2_text: "Body Location broken, damaged. +10 Fatigue, -30 Strength, Toughness, Agility"});}
+      if (g2 >= 96)
+      {setAttrs({medical_g2_text: "Body Location Destroyed, instant death"});}
+
+      //Neck
+      if (g3 == 0)
+      {setAttrs({medical_g3_text: "No Effect / Healthy"});}
+      if (g3 >= 1 && g3 <= 30)
+      {setAttrs({medical_g3_text: "-5 Toughness"});}
+      if (g3 >= 31 && g3 <= 50)
+      {setAttrs({medical_g3_text: "-10 Toughness"});}
+      if (g3 >= 51 && g3 <= 70)
+      {setAttrs({medical_g3_text: "-15 Toughness"});}
+      if (g3 >= 71 && g3 <= 90)
+      {setAttrs({medical_g3_text: "-20 Toughness"});}
+      if (g3 >= 91 && g3 <= 110)
+      {setAttrs({medical_g3_text: "Body Location broken, damaged. -25 Toughness, Paralyzed and Helpless"});}
+      if (g3 >= 111)
+      {setAttrs({medical_g3_text: "Body Location Destroyed, instant death"});}
+
+      //Skull / Brain
+      if (g4 == 0)
+      {setAttrs({medical_g4_text: "No Effect / Healthy"});}
+      if (g4 >= 1 && g4 <= 25)
+      {setAttrs({medical_g4_text: "-10 Perception, Intellect, Warfare Range, Warfare Melee"});}
+      if (g4 >= 26 && g4 <= 40)
+      {setAttrs({medical_g4_text: "-15 Perception, Intellect, Warfare Range, Warfare Melee"});}
+      if (g4 >= 41 && g4 <= 55)
+      {setAttrs({medical_g4_text: "-20 Perception, Intellect, Warfare Range, Warfare Melee"});}
+      if (g4 >= 56 && g4 <= 70)
+      {setAttrs({medical_g4_text: "-25 Perception, Intellect, Warfare Range, Warfare Melee"});}
+      if (g4 >= 71 && g4 <= 95)
+      {setAttrs({medical_g4_text: "Body Location broken, damaged. +10 Fatigue, -30 Perception, Intellect, Warfare Range, Warfare Melee"});}
+      if (g4 >= 96)
+      {setAttrs({medical_g4_text: "Body Location Destroyed, instant death"});}
+
+      //Nose / Ear
+      if (g5 == 0)
+      {setAttrs({medical_g5_text: "No Effect / Healthy"});}
+      if (g5 >= 1 && g5 <= 25)
+      {setAttrs({medical_g5_text: "-5 Perception to Smelling or Hearing Perception Tests"});}
+      if (g5 >= 25 && g5 <= 40)
+      {setAttrs({medical_g5_text: "-10 Perception to Smelling or Hearing Perception Tests"});}
+      if (g5 >= 41 && g5 <= 55)
+      {setAttrs({medical_g5_text: "-15 Perception to Smelling or Hearing Perception Tests"});}
+      if (g5 >= 56 && g5 <= 70)
+      {setAttrs({medical_g5_text: "-20 Perception to Smelling or Hearing Perception Tests"});}
+      if (g5 >= 71 && g5 <= 95)
+      {setAttrs({medical_g5_text: "Body Location broken, -25 Perception to Smelling or Hearing Perception Tests"});}
+      if (g5 >= 96)
+      {setAttrs({medical_g5_text: "Body Location Destroyed, cannot make Smelling Tests, or halves Perception for Hearing Tests"});}
+
+      //Limb (Arm / Leg)
+      if (g6 == 0)
+      {setAttrs({medical_g6_text: "No Effect / Healthy"});}
+      if (g6 >= 1 && g6 <= 30)
+      {setAttrs({medical_g6_text: "-5 Strength to Arm, or -5 Agility to Leg"});}
+      if (g6 >= 31 && g6 <= 50)
+      {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
+      if (g6 >= 51 && g6 <= 70)
+      {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
+      if (g6 >= 71 && g6 <= 90)
+      {setAttrs({medical_g6_text: "-20 Strength to Arm, or -20 Agility to Leg"});}
+      if (g6 >= 91 && g6 <= 110)
+      {setAttrs({medical_g6_text: "Body Location damaged, -25 Strength to Arm, or -25 Agility to Leg. -20 to any Action with this limb"});}
+      if (g6 >= 111)
+      {setAttrs({medical_g6_text: "Body Location Destroyed, limb cannot be used. +3 Fatigue. Halves Strength if Arm. Halves Agility and reduces Movement Speed by an extra 2 Meters if Leg"});}
+
+      //Small / Large Intestines
+      if (g7 == 0)
+      {setAttrs({medical_g7_text: "No Effect / Healthy"});}
+      if (g7 >= 1 && g7 <= 30)
+      {setAttrs({medical_g7_text: "-5 Toughness, -5 Agility"});}
+      if (g7 >= 31 && g7 <= 50)
+      {setAttrs({medical_g7_text: "-5 Toughness, -10 Agility"});}
+      if (g7 >= 51 && g7 <= 70)
+      {setAttrs({medical_g7_text: "-10 Toughness, -15 Agility"});}
+      if (g7 >= 71 && g7 <= 90)
+      {setAttrs({medical_g7_text: "-10 Toughness, -20 Agility"});}
+      if (g7 >= 91 && g7 <= 110)
+      {setAttrs({medical_g7_text: "Body Location damaged, -15 Toughness, -15 Agility. +2 Fatigue"});}
+      if (g7 >= 111)
+      {setAttrs({medical_g7_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +10 Fatigue"});}
+
+      //Lungs
+      if (g8 == 0)
+      {setAttrs({medical_g8_text: "No Effect / Healthy"});}
+      if (g8 >= 1 && g8 <= 25)
+      {setAttrs({medical_g8_text: "-5 Toughness, Stunned for 1D5-Toughness Modifier in Rounds"});}
+      if (g8 >= 31 && g8 <= 40)
+      {setAttrs({medical_g8_text: "-10 Toughness, Stunned for 2D5-Toughness Modifier in Rounds"});}
+      if (g8 >= 46 && g8 <= 55)
+      {setAttrs({medical_g8_text: "-15 Toughness, Stunned for 3D5-Toughness Modifier in Rounds"});}
+      if (g8 >= 46 && g8 <= 70)
+      {setAttrs({medical_g8_text: "-20 Toughness, Stunned for 4D5-Toughness Modifier in Rounds"});}
+      if (g8 >= 46 && g8 <= 95)
+      {setAttrs({medical_g8_text: "Body Location damaged, -25 Toughness, Stunned for 5D5-Toughness Modifier in Rounds"});}
+      if (g8 >= 96)
+      {setAttrs({medical_g8_text: "Body Location Destroyed, -30 Toughness, Stunned for 6D5-Toughness Modifier in Rounds. Character will take 2 Wounds whenever they take a Movement Action quicker than 2 Meters per Turn"});}
+
+      //Kidney / Stomach / Liver
+      if (g9 == 0)
+      {setAttrs({medical_g9_text: "No Effect / Healthy"});}
+      if (g9 >= 1 && g9 <= 25)
+      {setAttrs({medical_g9_text: "-5 Toughness, -5 Agility"});}
+      if (g9 >= 26 && g9 <= 40)
+      {setAttrs({medical_g9_text: "-5 Toughness, -10 Agility"});}
+      if (g9 >= 41 && g9 <= 55)
+      {setAttrs({medical_g9_text: "-10 Toughness, -15 Agility"});}
+      if (g9 >= 55 && g9 <= 70)
+      {setAttrs({medical_g9_text: "-10 Toughness, -20 Agility"});}
+      if (g9 >= 71 && g9 <= 95)
+      {setAttrs({medical_g9_text: "Body Location damaged, -15 Toughness, -15 Agility. +1 Fatigue"});}
+      if (g9 >= 96)
+      {setAttrs({medical_g9_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +5 Fatigue"});}
+
+      //Knee / Ankle / Shoulder / Elbow
+      if (g10 == 0)
+      {setAttrs({medical_g10_text: "No Effect / Healthy"});}
+      if (g10 >= 1 && g10 <= 30)
+      {setAttrs({medical_g10_text: "-5 Strength, -5 Agility"});}
+      if (g10 >= 31 && g10 <= 50)
+      {setAttrs({medical_g10_text: "-10 Strength, -5 Agility"});}
+      if (g10 >= 51 && g10 <= 70)
+      {setAttrs({medical_g10_text: "-10 Strength, -10 Agility"});}
+      if (g10 >= 71 && g10 <= 90)
+      {setAttrs({medical_g10_text: "-15 Strength, -10 Agility"});}
+      if (g10 >= 91 && g10 <= 110)
+      {setAttrs({medical_g10_text: "Body Location damaged, -15 Strength, -15 Agility. +1 Fatigue"});}
+      if (g10 >= 111)
+      {setAttrs({medical_g10_text: "Body Location Destroyed, -20 Strength, -20 Agility. +5 Fatigue"});}
+
+      //Eye
+      if (g11 == 0)
+      {setAttrs({medical_g11_text: "No Effect / Healthy"});}
+      if (g11 >= 1 && g11 <= 20)
+      {setAttrs({medical_g11_text: "-5 eyesight-based Perception Tests and Warfare Tests"});}
+      if (g11 >= 21 && g11 <= 30)
+      {setAttrs({medical_g11_text: "-10 eyesight-based Perception Tests and Warfare Tests"});}
+      if (g11 >= 31 && g11 <= 40)
+      {setAttrs({medical_g11_text: "-15 eyesight-based Perception Tests and Warfare Tests"});}
+      if (g11 >= 41 && g11 <= 50)
+      {setAttrs({medical_g11_text: "-20 eyesight-based Perception Tests and Warfare Tests"});}
+      if (g11 >= 51 && g11 <= 60)
+      {setAttrs({medical_g11_text: "Body Location broken, -20 eyesight-based Perception Tests and Warfare Tests. Blinded for 3D5 - Toughness Modifier in Rounds"});}
+      if (g11 >= 61)
+      {setAttrs({medical_g11_text: "Eye destroyed, cannot be used. -30 for eyesight-based Perception Tests and Warfare Tests."});}
+
+      //Mouth
+      if (g12 == 0)
+      {setAttrs({medical_g12_text: "No Effect / Healthy"});}
+      if (g12 >= 1 && g12 <= 30)
+      {setAttrs({medical_g12_text: "-5 Toughness, -5 to Speech-based Tests"});}
+      if (g12 >= 31 && g12 <= 50)
+      {setAttrs({medical_g12_text: "-5 Toughness, -10 to Speech-based Tests"});}
+      if (g12 >= 51 && g12 <= 70)
+      {setAttrs({medical_g12_text: "-10 Toughness, -15 to Speech-based Tests"});}
+      if (g12 >= 71 && g12 <= 90)
+      {setAttrs({medical_g12_text: "-10 Toughness, -20 to Speech-based Tests"});}
+      if (g12 >= 91 && g12 <= 110)
+      {setAttrs({medical_g12_text: "Body Location broken, damaged. -15 Toughness, +1 Fatigue, -25 to Speech-based Tests"});}
+      if (g12 >= 111)
+      {setAttrs({medical_g12_text: "Body Location Destroyed, -15 Toughness, +2 Fatigue, -Cannot speak"});}
+
+      //Hand
+      if (g13 == 0)
+      {setAttrs({medical_g13_text: "No Effect / Healthy"});}
+      if (g13 >= 1 && g13 <= 30)
+      {setAttrs({medical_g13_text: "-5 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+      if (g13 >= 31 && g13 <= 50)
+      {setAttrs({medical_g13_text: "-10 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+      if (g13 >= 46 && g13 <= 70)
+      {setAttrs({medical_g13_text: "-15 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+      if (g13 >= 46 && g13 <= 90)
+      {setAttrs({medical_g13_text: "-20 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+      if (g13 >= 46 && g13 <= 110)
+      {setAttrs({medical_g13_text: "Body Location broken, -25 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+      if (g13 >= 111)
+      {setAttrs({medical_g13_text: "Body Location Destroyed, Character cannot use the hand for any Actions"});}
+
+      //Chin / Jaw / Cheek
+      if (g14 == 0)
+      {setAttrs({medical_g14_text: "No Effect / Healthy"});}
+      if (g14 >= 1 && g14 <= 30)
+      {setAttrs({medical_g14_text: "-5 Toughness"});}
+      if (g14 >= 31 && g14 <= 50)
+      {setAttrs({medical_g14_text: "-5 Toughness, -5 to Speech-based Tests"});}
+      if (g14 >= 51 && g14 <= 70)
+      {setAttrs({medical_g14_text: "-10 Toughness, -10 to Speech-based Tests"});}
+      if (g14 >= 71 && g14 <= 90)
+      {setAttrs({medical_g14_text: "-10 Toughness, +1 Fatigue, -10 to Speech-based Tests"});}
+      if (g14 >= 91 && g14 <= 110)
+      {setAttrs({medical_g14_text: "Body Location broken, damaged. -15 Toughness, +3 Fatigue, -15 to Speech-based Tests"});}
+      if (g14 >= 111)
+      {setAttrs({medical_g14_text: "Body Location Destroyed, -20 Toughness, +5 Fatigue, Cannot speak"});}
+
+      //Foot
+      if (g15 == 0)
+      {setAttrs({medical_g15_text: "No Effect / Healthy"});}
+      if (g15 >= 1 && g15 <= 30)
+      {setAttrs({medical_g15_text: "-5 to Agility when figuring Movement Speed"});}
+      if (g15 >= 31 && g15 <= 50)
+      {setAttrs({medical_g15_text: "-10 to Agility when figuring Movement Speed"});}
+      if (g15 >= 51 && g15 <= 70)
+      {setAttrs({medical_g15_text: "-15 to Agility when figuring Movement Speed"});}
+      if (g15 >= 71 && g15 <= 90)
+      {setAttrs({medical_g15_text: "-20 to Agility when figuring Movement Speed"});}
+      if (g15 >= 91 && g15 <= 110)
+      {setAttrs({medical_g15_text: "Body Location broken, -25 to Agility when figuring Movement Speed"});}
+      if (g15 >= 111)
+      {setAttrs({medical_g15_text: "Body Location Destroyed, Character cannot use the Foot for any Actions. Halves Agility"});}
+
+      //Pelvis
+      if (g16 == 0)
+      {setAttrs({medical_g16_text: "No Effect / Healthy"});}
+      if (g16 >= 1 && g16 <= 30)
+      {setAttrs({medical_g16_text: "5 Toughness, -5 Agility"});}
+      if (g16 >= 31 && g16 <= 50)
+      {setAttrs({medical_g16_text: "5 Toughness, -10 Agility"});}
+      if (g16 >= 51 && g16 <= 70)
+      {setAttrs({medical_g16_text: "10 Toughness, -10 Agility"});}
+      if (g16 >= 71 && g16 <= 90)
+      {setAttrs({medical_g16_text: "10 Toughness, -15 Agility"});}
+      if (g16 >= 91 && g16 <= 110)
+      {setAttrs({medical_g16_text: "Body Location damaged, -15 Toughness, -20 Agility"});}
+      if (g16 >= 111)
+      {setAttrs({medical_g16_text: "Body Location damaged, -20 Toughness, -30 Agility"});}
+
+      //Chest
+      if (g17 == 0)
+      {setAttrs({medical_g17_text: "No Effect / Healthy"});}
+      if (g17 >= 1 && g17 <= 30)
+      {setAttrs({medical_g17_text: "-5 Toughness"});}
+      if (g17 >= 31 && g17 <= 50)
+      {setAttrs({medical_g17_text: "-10 Toughness"});}
+      if (g17 >= 51 && g17 <= 70)
+      {setAttrs({medical_g17_text: "-15 Toughness, Stunned for 1D5 Rounds"});}
+      if (g17 >= 71 && g17 <= 90)
+      {setAttrs({medical_g17_text: "-20 Toughness, Stunned for 2D5 Rounds"});}
+      if (g17 >= 91 && g17 <= 110)
+      {setAttrs({medical_g17_text: "Body Location broken, damaged. -30 Toughness, Stunned for 3D5 Rounds"});}
+      if (g17 >= 111)
+      {setAttrs({medical_g17_text: "Chest collapsed or too heavily damaged for survival. Instant death"});}
+
+
+
+
+    });
+  });
 
   // ___________________________________________________________________________
   // ____________________Advancement XP sheet worker_______________________________
@@ -4032,7 +3950,9 @@
   <div class="sheet-template-header">{{character}} rolls for {{roll-name}}</div>
   <div class="sheet-template-content">
     <div class="sheet-template-2x2">
-      <div class="sheet-template-row sheet-template-right">{{roll}}</div>
+      <div class="sheet-template-row sheet-template-right">
+        {{roll}}
+      </div>
       <div class="sheet-template-row">
         {{#^rollLess() roll 0 }}Degrees of success{{/^rollLess() roll 0 }}
         {{#rollLess() roll 0 }}Degrees of failure{{/rollLess() roll 0 }}
