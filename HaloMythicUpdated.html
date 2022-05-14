@@ -1456,9 +1456,9 @@
       </div>
 
       <div class='medicalg11 medicalG'>
-        Foot
-        <input name='attr_medical_g15' type='number' value='0' class='medical_input'/>
-        <textarea name="attr_medical_g15_text" class='medical_effect'></textarea>
+        Pelvis
+        <input name='attr_medical_g16' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g16_text" class='medical_effect'></textarea>
       </div>
 
       <div class='medicalg12 medicalG'>
@@ -1486,9 +1486,9 @@
       </div>
 
       <div class='medicalg16 medicalG'>
-        Pelvis
-        <input name='attr_medical_g16' type='number' value='0' class='medical_input'/>
-        <textarea name="attr_medical_g16_text" class='medical_effect_long'></textarea>
+        Foot
+        <input name='attr_medical_g15' type='number' value='0' class='medical_input'/>
+        <textarea name="attr_medical_g15_text" class='medical_effect_long'></textarea>
       </div>
 
       <div class='medicalg17 medicalG'>
@@ -2049,6 +2049,16 @@
       <option value='10'>Dull       Gold</option>
       <option value='11'>You asked for this #696969</option>
       <option value='12'>Far too vibrant    pink</option>
+
+    </select>
+    <br>
+
+    <h3>Medical section version override</h3>
+    <select name='attr_medical_override' class='full_width edge_padding'>
+      <option value='0'>4.0 and lower legacy</option>
+      <option value='1'selected='selected'>5.0 standard</option>
+      <option value='2'>5.1 standard</option>
+
 
     </select>
     <br>
@@ -3169,10 +3179,10 @@
     });
   });
   // ___________________________________________________________________________
-  // ____________________Medical sheet worker______________________________________
+  // ____________________Medical sheet worker___________________________________
   // ___________________________________________________________________________
-  on('change:medical_g1 change:medical_g2 change:medical_g3 change:medical_g4 change:medical_g5 change:medical_g6 change:medical_g7 change:medical_g8 change:medical_g9 change:medical_g10 change:medical_g11 change:medical_g12 change:medical_g13 change:medical_g14 change:medical_g15 change:medical_g16 change:medical_g17', function() {
-    getAttrs(['medical_g1', 'medical_g2', 'medical_g3', 'medical_g4', 'medical_g5', 'medical_g6', 'medical_g7', 'medical_g8', 'medical_g9', 'medical_g10', 'medical_g11', 'medical_g12', 'medical_g13', 'medical_g14', 'medical_g15', 'medical_g16', 'medical_g17'], function(values) {
+  on('change:medical_g1 change:medical_g2 change:medical_g3 change:medical_g4 change:medical_g5 change:medical_g6 change:medical_g7 change:medical_g8 change:medical_g9 change:medical_g10 change:medical_g11 change:medical_g12 change:medical_g13 change:medical_g14 change:medical_g15 change:medical_g16 change:medical_g17 change:medical_override', function() {
+    getAttrs(['medical_g1', 'medical_g2', 'medical_g3', 'medical_g4', 'medical_g5', 'medical_g6', 'medical_g7', 'medical_g8', 'medical_g9', 'medical_g10', 'medical_g11', 'medical_g12', 'medical_g13', 'medical_g14', 'medical_g15', 'medical_g16', 'medical_g17', 'medical_override'], function(values) {
       var g1 = parseInt(values['medical_g1'], 10) || 0;
       var g2 = parseInt(values['medical_g2'], 10) || 0;
       var g3 = parseInt(values['medical_g3'], 10) || 0;
@@ -3190,275 +3200,550 @@
       var g15 = parseInt(values['medical_g15'], 10) || 0;
       var g16 = parseInt(values['medical_g16'], 10) || 0;
       var g17 = parseInt(values['medical_g17'], 10) || 0;
+      var medical_override = parseInt(values['medical_override'], 10) || 0;
 
-      //Finger / toe
-      if (g1 == 0)
-      {setAttrs({medical_g1_text: "No Effect / Healthy"});}
-      if (g1 >= 1 && g1 <= 30)
-      {setAttrs({medical_g1_text: "-1 WFM + WFR to Finger,-2 Agility to Toe"});}
-      if (g1 >= 31 && g1 <= 45)
-      {setAttrs({medical_g1_text: "-10 WFM and WFR to Finger, -10 Agility to Toe"});}
-      if (g1 >= 46 && g1 <= 60)
-      {setAttrs({medical_g1_text: "Body Location broken, damaged. No longer usable. -15 Strength to Finger, -15 Agility to Toe"});}
-      if (g1 >= 61)
-      {setAttrs({medical_g1_text: "Body Location Destroyed. -20 Strength to Finger, -20 Agility to Toe"});}
+      // --------------------------------------------------------------------------------------------------------------
+      // 4.0 standard -------------------------------------------------------------------------------------------------
+      // --------------------------------------------------------------------------------------------------------------
+      if(medical_override == 0){
+        //Finger / toe
+        if (g1 == 0)
+        {setAttrs({medical_g1_text: "No Effect / Healthy"});}
+        if (g1 >= 1 && g1 <= 15)
+        {setAttrs({medical_g1_text: "-1 WFM + WFR to Finger,-2 Agility to Toe"});}
+        if (g1 >= 16 && g1 <= 30)
+        {setAttrs({medical_g1_text: "-2 WFM and WFR to Finger, -4 Agility to Toe"});}
+        if (g1 >= 31 && g1 <= 45)
+        {setAttrs({medical_g1_text: "Body Location broken, damaged. No longer usable. -4 Strength to Finger, -4 Agility to Toe"});}
+        if (g1 >= 46)
+        {setAttrs({medical_g1_text: "Body Location Destroyed. -4 Strength to Finger, -4 Agility to Toe"});}
 
-      //Heart
-      if (g2 == 0)
-      {setAttrs({medical_g2_text: "No Effect / Healthy"});}
-      if (g2 >= 1 && g2 <= 25)
-      {setAttrs({medical_g2_text: "-10 Strength, Toughness, Agility"});}
-      if (g2 >= 26 && g2 <= 40)
-      {setAttrs({medical_g2_text: "-15 Strength, Toughness, Agility"});}
-      if (g2 >= 41 && g2 <= 55)
-      {setAttrs({medical_g2_text: "-20 Strength, Toughness, Agility"});}
-      if (g2 >= 56 && g2 <= 70)
-      {setAttrs({medical_g2_text: "-25 Strength, Toughness, Agility"});}
-      if (g2 >= 71 && g2 <= 95)
-      {setAttrs({medical_g2_text: "Body Location broken, damaged. +10 Fatigue, -30 Strength, Toughness, Agility"});}
-      if (g2 >= 96)
-      {setAttrs({medical_g2_text: "Body Location Destroyed, instant death"});}
+        //Heart
+        if (g2 == 0)
+        {setAttrs({medical_g2_text: "No Effect / Healthy"});}
+        if (g2 >= 1 && g2 <= 15)
+        {setAttrs({medical_g2_text: "-2 Strength, Toughness, Agility"});}
+        if (g2 >= 16 && g2 <= 25)
+        {setAttrs({medical_g2_text: "-5 Strength, Toughness, Agility"});}
+        if (g2 >= 26 && g2 <= 40)
+        {setAttrs({medical_g2_text: "-10 Strength, Toughness, Agility"});}
+        if (g2 >= 41 && g2 <= 59)
+        {setAttrs({medical_g2_text: "Body Location broken, damaged. +10 Fatigue, -15 Strength, Toughness, Agility"});}
+        if (g2 >= 60)
+        {setAttrs({medical_g2_text: "Body Location Destroyed, instant death"});}
 
-      //Neck
-      if (g3 == 0)
-      {setAttrs({medical_g3_text: "No Effect / Healthy"});}
-      if (g3 >= 1 && g3 <= 30)
-      {setAttrs({medical_g3_text: "-5 Toughness"});}
-      if (g3 >= 31 && g3 <= 50)
-      {setAttrs({medical_g3_text: "-10 Toughness"});}
-      if (g3 >= 51 && g3 <= 70)
-      {setAttrs({medical_g3_text: "-15 Toughness"});}
-      if (g3 >= 71 && g3 <= 90)
-      {setAttrs({medical_g3_text: "-20 Toughness"});}
-      if (g3 >= 91 && g3 <= 110)
-      {setAttrs({medical_g3_text: "Body Location broken, damaged. -25 Toughness, Paralyzed and Helpless"});}
-      if (g3 >= 111)
-      {setAttrs({medical_g3_text: "Body Location Destroyed, instant death"});}
+        //Neck
+        if (g3 == 0)
+        {setAttrs({medical_g3_text: "No Effect / Healthy"});}
+        if (g3 >= 1 && g3 <= 15)
+        {setAttrs({medical_g3_text: "-2 Toughness"});}
+        if (g3 >= 16 && g3 <= 25)
+        {setAttrs({medical_g3_text: "-5 Toughness"});}
+        if (g3 >= 26 && g3 <= 30)
+        {setAttrs({medical_g3_text: "-10 Toughness"});}
+        if (g3 >= 31 && g3 <= 40)
+        {setAttrs({medical_g3_text: "-10 Toughness, +1 Fatigue"});}
+        if (g3 >= 41 && g3 <= 59)
+        {setAttrs({medical_g3_text: "Body Location broken, damaged. -20 Toughness, Paralyzed and Helpless"});}
+        if (g3 >= 60)
+        {setAttrs({medical_g3_text: "Body Location Destroyed, instant death"});}
 
-      //Skull / Brain
-      if (g4 == 0)
-      {setAttrs({medical_g4_text: "No Effect / Healthy"});}
-      if (g4 >= 1 && g4 <= 25)
-      {setAttrs({medical_g4_text: "-10 Perception, Intellect, Warfare Range, Warfare Melee"});}
-      if (g4 >= 26 && g4 <= 40)
-      {setAttrs({medical_g4_text: "-15 Perception, Intellect, Warfare Range, Warfare Melee"});}
-      if (g4 >= 41 && g4 <= 55)
-      {setAttrs({medical_g4_text: "-20 Perception, Intellect, Warfare Range, Warfare Melee"});}
-      if (g4 >= 56 && g4 <= 70)
-      {setAttrs({medical_g4_text: "-25 Perception, Intellect, Warfare Range, Warfare Melee"});}
-      if (g4 >= 71 && g4 <= 95)
-      {setAttrs({medical_g4_text: "Body Location broken, damaged. +10 Fatigue, -30 Perception, Intellect, Warfare Range, Warfare Melee"});}
-      if (g4 >= 96)
-      {setAttrs({medical_g4_text: "Body Location Destroyed, instant death"});}
+        //Skull / Brain
+        if (g4 == 0)
+        {setAttrs({medical_g4_text: "No Effect / Healthy"});}
+        if (g4 >= 1 && g4 <= 15)
+        {setAttrs({medical_g4_text: "-2 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 16 && g4 <= 25)
+        {setAttrs({medical_g4_text: "-5 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 26 && g4 <= 40)
+        {setAttrs({medical_g4_text: "-10 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 41 && g4 <= 59)
+        {setAttrs({medical_g4_text: "Body Location broken, damaged. +10 Fatigue, -15 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 60)
+        {setAttrs({medical_g4_text: "Body Location Destroyed, instant death"});}
 
-      //Nose / Ear
-      if (g5 == 0)
-      {setAttrs({medical_g5_text: "No Effect / Healthy"});}
-      if (g5 >= 1 && g5 <= 25)
-      {setAttrs({medical_g5_text: "-5 Perception to Smelling or Hearing Perception Tests"});}
-      if (g5 >= 25 && g5 <= 40)
-      {setAttrs({medical_g5_text: "-10 Perception to Smelling or Hearing Perception Tests"});}
-      if (g5 >= 41 && g5 <= 55)
-      {setAttrs({medical_g5_text: "-15 Perception to Smelling or Hearing Perception Tests"});}
-      if (g5 >= 56 && g5 <= 70)
-      {setAttrs({medical_g5_text: "-20 Perception to Smelling or Hearing Perception Tests"});}
-      if (g5 >= 71 && g5 <= 95)
-      {setAttrs({medical_g5_text: "Body Location broken, -25 Perception to Smelling or Hearing Perception Tests"});}
-      if (g5 >= 96)
-      {setAttrs({medical_g5_text: "Body Location Destroyed, cannot make Smelling Tests, or halves Perception for Hearing Tests"});}
+        //Nose / Ear
+        if (g5 == 0)
+        {setAttrs({medical_g5_text: "No Effect / Healthy"});}
+        if (g5 >= 1 && g5 <= 15)
+        {setAttrs({medical_g5_text: "-2 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 16 && g5 <= 25)
+        {setAttrs({medical_g5_text: "-5 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 26 && g5 <= 30)
+        {setAttrs({medical_g5_text: "-10 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 31 && g5 <= 40)
+        {setAttrs({medical_g5_text: "-15 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 41 && g5 <= 59)
+        {setAttrs({medical_g5_text: "Body Location broken, -20 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 60)
+        {setAttrs({medical_g5_text: "Body Location Destroyed, cannot make Smelling Tests, or halves Perception for Hearing Tests"});}
 
-      //Limb (Arm / Leg)
-      if (g6 == 0)
-      {setAttrs({medical_g6_text: "No Effect / Healthy"});}
-      if (g6 >= 1 && g6 <= 30)
-      {setAttrs({medical_g6_text: "-5 Strength to Arm, or -5 Agility to Leg"});}
-      if (g6 >= 31 && g6 <= 50)
-      {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
-      if (g6 >= 51 && g6 <= 70)
-      {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
-      if (g6 >= 71 && g6 <= 90)
-      {setAttrs({medical_g6_text: "-20 Strength to Arm, or -20 Agility to Leg"});}
-      if (g6 >= 91 && g6 <= 110)
-      {setAttrs({medical_g6_text: "Body Location damaged, -25 Strength to Arm, or -25 Agility to Leg. -20 to any Action with this limb"});}
-      if (g6 >= 111)
-      {setAttrs({medical_g6_text: "Body Location Destroyed, limb cannot be used. +3 Fatigue. Halves Strength if Arm. Halves Agility and reduces Movement Speed by an extra 2 Meters if Leg"});}
+        //Limb (Arm / Leg)
+        if (g6 == 0)
+        {setAttrs({medical_g6_text: "No Effect / Healthy"});}
+        if (g6 >= 1 && g6 <= 15)
+        {setAttrs({medical_g6_text: "-2 Strength to Arm, or -2 Agility to Leg"});}
+        if (g6 >= 16 && g6 <= 25)
+        {setAttrs({medical_g6_text: "-5 Strength to Arm, or -5 Agility to Leg"});}
+        if (g6 >= 26 && g6 <= 30)
+        {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
+        if (g6 >= 31 && g6 <= 40)
+        {setAttrs({medical_g6_text: "-15 Strength to Arm, or -15 Agility to Leg"});}
+        if (g6 >= 41 && g6 <= 59)
+        {setAttrs({medical_g6_text: "Body Location damaged, -15 Strength to Arm, or -15 Agility to Leg. -5 to any Action with this limb"});}
+        if (g6 >= 60)
+        {setAttrs({medical_g6_text: "Body Location Destroyed, limb cannot be used. +3 Fatigue."});}
 
-      //Small / Large Intestines
-      if (g7 == 0)
-      {setAttrs({medical_g7_text: "No Effect / Healthy"});}
-      if (g7 >= 1 && g7 <= 30)
-      {setAttrs({medical_g7_text: "-5 Toughness, -5 Agility"});}
-      if (g7 >= 31 && g7 <= 50)
-      {setAttrs({medical_g7_text: "-5 Toughness, -10 Agility"});}
-      if (g7 >= 51 && g7 <= 70)
-      {setAttrs({medical_g7_text: "-10 Toughness, -15 Agility"});}
-      if (g7 >= 71 && g7 <= 90)
-      {setAttrs({medical_g7_text: "-10 Toughness, -20 Agility"});}
-      if (g7 >= 91 && g7 <= 110)
-      {setAttrs({medical_g7_text: "Body Location damaged, -15 Toughness, -15 Agility. +2 Fatigue"});}
-      if (g7 >= 111)
-      {setAttrs({medical_g7_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +10 Fatigue"});}
+        //Small / Large Intestines
+        if (g7 == 0)
+        {setAttrs({medical_g7_text: "No Effect / Healthy"});}
+        if (g7 >= 1 && g7 <= 15)
+        {setAttrs({medical_g7_text: "-2 Toughness, -5 Agility"});}
+        if (g7 >= 16 && g7 <= 25)
+        {setAttrs({medical_g7_text: "-4 Toughness, -4 Agility"});}
+        if (g7 >= 26 && g7 <= 30)
+        {setAttrs({medical_g7_text: "-6 Toughness, -6 Agility"});}
+        if (g7 >= 31 && g7 <= 40)
+        {setAttrs({medical_g7_text: "-10 Toughness, -10 Agility"});}
+        if (g7 >= 41 && g7 <= 59)
+        {setAttrs({medical_g7_text: "Body Location damaged, -15 Toughness, -15 Agility. +2 Fatigue"});}
+        if (g7 >= 60)
+        {setAttrs({medical_g7_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +5 Fatigue"});}
 
-      //Lungs
-      if (g8 == 0)
-      {setAttrs({medical_g8_text: "No Effect / Healthy"});}
-      if (g8 >= 1 && g8 <= 25)
-      {setAttrs({medical_g8_text: "-5 Toughness, Stunned for 1D5-Toughness Modifier in Rounds"});}
-      if (g8 >= 31 && g8 <= 40)
-      {setAttrs({medical_g8_text: "-10 Toughness, Stunned for 2D5-Toughness Modifier in Rounds"});}
-      if (g8 >= 46 && g8 <= 55)
-      {setAttrs({medical_g8_text: "-15 Toughness, Stunned for 3D5-Toughness Modifier in Rounds"});}
-      if (g8 >= 46 && g8 <= 70)
-      {setAttrs({medical_g8_text: "-20 Toughness, Stunned for 4D5-Toughness Modifier in Rounds"});}
-      if (g8 >= 46 && g8 <= 95)
-      {setAttrs({medical_g8_text: "Body Location damaged, -25 Toughness, Stunned for 5D5-Toughness Modifier in Rounds"});}
-      if (g8 >= 96)
-      {setAttrs({medical_g8_text: "Body Location Destroyed, -30 Toughness, Stunned for 6D5-Toughness Modifier in Rounds. Character will take 2 Wounds whenever they take a Movement Action quicker than 2 Meters per Turn"});}
+        //Lungs
+        if (g8 == 0)
+        {setAttrs({medical_g8_text: "No Effect / Healthy"});}
+        if (g8 >= 1 && g8 <= 15)
+        {setAttrs({medical_g8_text: "-2 Toughness, Stunned for 1D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 16 && g8 <= 25)
+        {setAttrs({medical_g8_text: "-5 Toughness, Stunned for 2D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 26 && g8 <= 30)
+        {setAttrs({medical_g8_text: "-10 Toughness, Stunned for 3D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 31 && g8 <= 40)
+        {setAttrs({medical_g8_text: "-15 Toughness, Stunned for 4D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 41 && g8 <= 59)
+        {setAttrs({medical_g8_text: "Body Location damaged, -20 Toughness, Stunned for 5D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 60)
+        {setAttrs({medical_g8_text: "Body Location Destroyed, -25 Toughness, Stunned for 6D5-Toughness Modifier in Rounds. Character will take 2 Wounds whenever they take a Movement Action quicker than 2 Meters per Turn"});}
 
-      //Kidney / Stomach / Liver
-      if (g9 == 0)
-      {setAttrs({medical_g9_text: "No Effect / Healthy"});}
-      if (g9 >= 1 && g9 <= 25)
-      {setAttrs({medical_g9_text: "-5 Toughness, -5 Agility"});}
-      if (g9 >= 26 && g9 <= 40)
-      {setAttrs({medical_g9_text: "-5 Toughness, -10 Agility"});}
-      if (g9 >= 41 && g9 <= 55)
-      {setAttrs({medical_g9_text: "-10 Toughness, -15 Agility"});}
-      if (g9 >= 55 && g9 <= 70)
-      {setAttrs({medical_g9_text: "-10 Toughness, -20 Agility"});}
-      if (g9 >= 71 && g9 <= 95)
-      {setAttrs({medical_g9_text: "Body Location damaged, -15 Toughness, -15 Agility. +1 Fatigue"});}
-      if (g9 >= 96)
-      {setAttrs({medical_g9_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +5 Fatigue"});}
+        //Kidney / Stomach / Liver
+        if (g9 == 0)
+        {setAttrs({medical_g9_text: "No Effect / Healthy"});}
+        if (g9 >= 1 && g9 <= 15)
+        {setAttrs({medical_g9_text: "-2 Toughness, -2 Agility"});}
+        if (g9 >= 16 && g9 <= 25)
+        {setAttrs({medical_g9_text: "-4 Toughness, -4 Agility"});}
+        if (g9 >= 26 && g9 <= 30)
+        {setAttrs({medical_g9_text: "-6 Toughness, -6 Agility"});}
+        if (g9 >= 31 && g9 <= 40)
+        {setAttrs({medical_g9_text: "-10 Toughness, -10 Agility"});}
+        if (g9 >= 41 && g9 <= 59)
+        {setAttrs({medical_g9_text: "Body Location damaged, -15 Toughness, -15 Agility. +1 Fatigue"});}
+        if (g9 >= 60)
+        {setAttrs({medical_g9_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +5 Fatigue"});}
 
-      //Knee / Ankle / Shoulder / Elbow
-      if (g10 == 0)
-      {setAttrs({medical_g10_text: "No Effect / Healthy"});}
-      if (g10 >= 1 && g10 <= 30)
-      {setAttrs({medical_g10_text: "-5 Strength, -5 Agility"});}
-      if (g10 >= 31 && g10 <= 50)
-      {setAttrs({medical_g10_text: "-10 Strength, -5 Agility"});}
-      if (g10 >= 51 && g10 <= 70)
-      {setAttrs({medical_g10_text: "-10 Strength, -10 Agility"});}
-      if (g10 >= 71 && g10 <= 90)
-      {setAttrs({medical_g10_text: "-15 Strength, -10 Agility"});}
-      if (g10 >= 91 && g10 <= 110)
-      {setAttrs({medical_g10_text: "Body Location damaged, -15 Strength, -15 Agility. +1 Fatigue"});}
-      if (g10 >= 111)
-      {setAttrs({medical_g10_text: "Body Location Destroyed, -20 Strength, -20 Agility. +5 Fatigue"});}
+        //Knee / Ankle / Shoulder / Elbow
+        if (g10 == 0)
+        {setAttrs({medical_g10_text: "No Effect / Healthy"});}
+        if (g10 >= 1 && g10 <= 15)
+        {setAttrs({medical_g10_text: "-2 Strength, -2 Agility"});}
+        if (g10 >= 16 && g10 <= 25)
+        {setAttrs({medical_g10_text: "-4 Strength, -4 Agility"});}
+        if (g10 >= 26 && g10 <= 30)
+        {setAttrs({medical_g10_text: "-6 Strength, -6 Agility"});}
+        if (g10 >= 31 && g10 <= 40)
+        {setAttrs({medical_g10_text: "-10 Strength, -10 Agility"});}
+        if (g10 >= 41 && g10 <= 59)
+        {setAttrs({medical_g10_text: "Body Location damaged, -15 Strength, -15 Agility. +1 Fatigue"});}
+        if (g10 >= 60)
+        {setAttrs({medical_g10_text: "Body Location Destroyed, -20 Strength, -20 Agility. +5 Fatigue"});}
 
-      //Eye
-      if (g11 == 0)
-      {setAttrs({medical_g11_text: "No Effect / Healthy"});}
-      if (g11 >= 1 && g11 <= 20)
-      {setAttrs({medical_g11_text: "-5 eyesight-based Perception Tests and Warfare Tests"});}
-      if (g11 >= 21 && g11 <= 30)
-      {setAttrs({medical_g11_text: "-10 eyesight-based Perception Tests and Warfare Tests"});}
-      if (g11 >= 31 && g11 <= 40)
-      {setAttrs({medical_g11_text: "-15 eyesight-based Perception Tests and Warfare Tests"});}
-      if (g11 >= 41 && g11 <= 50)
-      {setAttrs({medical_g11_text: "-20 eyesight-based Perception Tests and Warfare Tests"});}
-      if (g11 >= 51 && g11 <= 60)
-      {setAttrs({medical_g11_text: "Body Location broken, -20 eyesight-based Perception Tests and Warfare Tests. Blinded for 3D5 - Toughness Modifier in Rounds"});}
-      if (g11 >= 61)
-      {setAttrs({medical_g11_text: "Eye destroyed, cannot be used. -30 for eyesight-based Perception Tests and Warfare Tests."});}
+        //Eye
+        if (g11 == 0)
+        {setAttrs({medical_g11_text: "No Effect / Healthy"});}
+        if (g11 >= 1 && g11 <= 15)
+        {setAttrs({medical_g11_text: "-2 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 16 && g11 <= 25)
+        {setAttrs({medical_g11_text: "-5 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 26 && g11 <= 30)
+        {setAttrs({medical_g11_text: "-10 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 31 && g11 <= 40)
+        {setAttrs({medical_g11_text: "-12 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 41 && g11 <= 59)
+        {setAttrs({medical_g11_text: "Body Location broken, -15 eyesight-based Perception Tests"});}
+        if (g11 >= 60)
+        {setAttrs({medical_g11_text: "Body Location Destroyed, Character is blinded for 1D5 Rounds. -20 eye-based Perception Tests"});}
 
-      //Mouth
-      if (g12 == 0)
-      {setAttrs({medical_g12_text: "No Effect / Healthy"});}
-      if (g12 >= 1 && g12 <= 30)
-      {setAttrs({medical_g12_text: "-5 Toughness, -5 to Speech-based Tests"});}
-      if (g12 >= 31 && g12 <= 50)
-      {setAttrs({medical_g12_text: "-5 Toughness, -10 to Speech-based Tests"});}
-      if (g12 >= 51 && g12 <= 70)
-      {setAttrs({medical_g12_text: "-10 Toughness, -15 to Speech-based Tests"});}
-      if (g12 >= 71 && g12 <= 90)
-      {setAttrs({medical_g12_text: "-10 Toughness, -20 to Speech-based Tests"});}
-      if (g12 >= 91 && g12 <= 110)
-      {setAttrs({medical_g12_text: "Body Location broken, damaged. -15 Toughness, +1 Fatigue, -25 to Speech-based Tests"});}
-      if (g12 >= 111)
-      {setAttrs({medical_g12_text: "Body Location Destroyed, -15 Toughness, +2 Fatigue, -Cannot speak"});}
+        //Mouth
+        if (g12 == 0)
+        {setAttrs({medical_g12_text: "No Effect / Healthy"});}
+        if (g12 >= 1 && g12 <= 20)
+        {setAttrs({medical_g12_text: "-1 Toughness, -5 to Speech-based Tests"});}
+        if (g12 >= 21 && g12 <= 25)
+        {setAttrs({medical_g12_text: "-3 Toughness, -5 to Speech-based Tests"});}
+        if (g12 >= 26 && g12 <= 30)
+        {setAttrs({medical_g12_text: "-5 Toughness, -10 to Speech-based Tests"});}
+        if (g12 >= 31 && g12 <= 40)
+        {setAttrs({medical_g12_text: "-8 Toughness, -10 to Speech-based Tests"});}
+        if (g12 >= 41 && g12 <= 59)
+        {setAttrs({medical_g12_text: "Body Location broken, damaged. -12 Toughness, +1 Fatigue, -15 to Speech-based Tests"});}
+        if (g12 >= 60)
+        {setAttrs({medical_g12_text: "Body Location Destroyed, -15 Toughness, +2 Fatigue, -15 to Speech-based Tests"});}
 
-      //Hand
-      if (g13 == 0)
-      {setAttrs({medical_g13_text: "No Effect / Healthy"});}
-      if (g13 >= 1 && g13 <= 30)
-      {setAttrs({medical_g13_text: "-5 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
-      if (g13 >= 31 && g13 <= 50)
-      {setAttrs({medical_g13_text: "-10 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
-      if (g13 >= 46 && g13 <= 70)
-      {setAttrs({medical_g13_text: "-15 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
-      if (g13 >= 46 && g13 <= 90)
-      {setAttrs({medical_g13_text: "-20 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
-      if (g13 >= 46 && g13 <= 110)
-      {setAttrs({medical_g13_text: "Body Location broken, -25 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
-      if (g13 >= 111)
-      {setAttrs({medical_g13_text: "Body Location Destroyed, Character cannot use the hand for any Actions"});}
+        //Hand
+        if (g13 == 0)
+        {setAttrs({medical_g13_text: "No Effect / Healthy"});}
+        if (g13 >= 1 && g13 <= 20)
+        {setAttrs({medical_g13_text: "-3 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 21 && g13 <= 25)
+        {setAttrs({medical_g13_text: "-5 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 26 && g13 <= 30)
+        {setAttrs({medical_g13_text: "-10 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 31 && g13 <= 40)
+        {setAttrs({medical_g13_text: "-13 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 41 && g13 <= 59)
+        {setAttrs({medical_g13_text: "Body Location broken, -15 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 60)
+        {setAttrs({medical_g13_text: "Body Location Destroyed, Character cannot use the hand for any Actions"});}
 
-      //Chin / Jaw / Cheek
-      if (g14 == 0)
-      {setAttrs({medical_g14_text: "No Effect / Healthy"});}
-      if (g14 >= 1 && g14 <= 30)
-      {setAttrs({medical_g14_text: "-5 Toughness"});}
-      if (g14 >= 31 && g14 <= 50)
-      {setAttrs({medical_g14_text: "-5 Toughness, -5 to Speech-based Tests"});}
-      if (g14 >= 51 && g14 <= 70)
-      {setAttrs({medical_g14_text: "-10 Toughness, -10 to Speech-based Tests"});}
-      if (g14 >= 71 && g14 <= 90)
-      {setAttrs({medical_g14_text: "-10 Toughness, +1 Fatigue, -10 to Speech-based Tests"});}
-      if (g14 >= 91 && g14 <= 110)
-      {setAttrs({medical_g14_text: "Body Location broken, damaged. -15 Toughness, +3 Fatigue, -15 to Speech-based Tests"});}
-      if (g14 >= 111)
-      {setAttrs({medical_g14_text: "Body Location Destroyed, -20 Toughness, +5 Fatigue, Cannot speak"});}
+        //Chin / Jaw / Cheek
+        if (g14 == 0)
+        {setAttrs({medical_g14_text: "No Effect / Healthy"});}
+        if (g14 >= 1 && g14 <= 20)
+        {setAttrs({medical_g14_text: "-2 Toughness"});}
+        if (g14 >= 21 && g14 <= 25)
+        {setAttrs({medical_g14_text: "-4 Toughness, -5 to Speech-based Tests"});}
+        if (g14 >= 26 && g14 <= 30)
+        {setAttrs({medical_g14_text: "-6 Toughness, -10 to Speech-based Tests"});}
+        if (g14 >= 31 && g14 <= 40)
+        {setAttrs({medical_g14_text: "-10 Toughness, +1 Fatigue, -10 to Speech-based Tests"});}
+        if (g14 >= 41 && g14 <= 59)
+        {setAttrs({medical_g14_text: "Body Location broken, damaged. -15 Toughness, +2 Fatigue, -15 to Speech-based Tests"});}
+        if (g14 >= 60)
+        {setAttrs({medical_g14_text: "Body Location Destroyed, -20 Toughness, +3 Fatigue, -20 to Speech-based Tests"});}
 
-      //Foot
-      if (g15 == 0)
-      {setAttrs({medical_g15_text: "No Effect / Healthy"});}
-      if (g15 >= 1 && g15 <= 30)
-      {setAttrs({medical_g15_text: "-5 to Agility when figuring Movement Speed"});}
-      if (g15 >= 31 && g15 <= 50)
-      {setAttrs({medical_g15_text: "-10 to Agility when figuring Movement Speed"});}
-      if (g15 >= 51 && g15 <= 70)
-      {setAttrs({medical_g15_text: "-15 to Agility when figuring Movement Speed"});}
-      if (g15 >= 71 && g15 <= 90)
-      {setAttrs({medical_g15_text: "-20 to Agility when figuring Movement Speed"});}
-      if (g15 >= 91 && g15 <= 110)
-      {setAttrs({medical_g15_text: "Body Location broken, -25 to Agility when figuring Movement Speed"});}
-      if (g15 >= 111)
-      {setAttrs({medical_g15_text: "Body Location Destroyed, Character cannot use the Foot for any Actions. Halves Agility"});}
+        //Foot
+        if (g15 == 0)
+        {setAttrs({medical_g15_text: "No Effect / Healthy"});}
+        if (g15 >= 1 && g15 <= 20)
+        {setAttrs({medical_g15_text: "-5 to Agility when figuring Movement Speed"});}
+        if (g15 >= 21 && g15 <= 25)
+        {setAttrs({medical_g15_text: "-10 to Agility when figuring Movement Speed"});}
+        if (g15 >= 26 && g15 <= 30)
+        {setAttrs({medical_g15_text: "-15 to Agility when figuring Movement Speed"});}
+        if (g15 >= 31 && g15 <= 40)
+        {setAttrs({medical_g15_text: "-20 to Agility when figuring Movement Speed"});}
+        if (g15 >= 41 && g15 <= 59)
+        {setAttrs({medical_g15_text: "Body Location broken, -25 to Agility when figuring Movement Speed"});}
+        if (g15 >= 60)
+        {setAttrs({medical_g15_text: "Body Location Destroyed, Character cannot use the Foot for any Actions. Half Move reduced to 1 Meter, Full Move reduced to 2 Meters, Charge and Run are impossible"});}
 
-      //Pelvis
-      if (g16 == 0)
-      {setAttrs({medical_g16_text: "No Effect / Healthy"});}
-      if (g16 >= 1 && g16 <= 30)
-      {setAttrs({medical_g16_text: "5 Toughness, -5 Agility"});}
-      if (g16 >= 31 && g16 <= 50)
-      {setAttrs({medical_g16_text: "5 Toughness, -10 Agility"});}
-      if (g16 >= 51 && g16 <= 70)
-      {setAttrs({medical_g16_text: "10 Toughness, -10 Agility"});}
-      if (g16 >= 71 && g16 <= 90)
-      {setAttrs({medical_g16_text: "10 Toughness, -15 Agility"});}
-      if (g16 >= 91 && g16 <= 110)
-      {setAttrs({medical_g16_text: "Body Location damaged, -15 Toughness, -20 Agility"});}
-      if (g16 >= 111)
-      {setAttrs({medical_g16_text: "Body Location damaged, -20 Toughness, -30 Agility"});}
+        //Pelvis
+        if (g16 == 0)
+        {setAttrs({medical_g16_text: "No Effect / Healthy"});}
+        if (g16 >= 1 && g16 <= 20)
+        {setAttrs({medical_g16_text: "-1 Toughness, -4 Agility"});}
+        if (g16 >= 21 && g16 <= 25)
+        {setAttrs({medical_g16_text: "-3 Toughness, -6 Agility"});}
+        if (g16 >= 26 && g16 <= 30)
+        {setAttrs({medical_g16_text: "-6 Toughness, -8 Agility"});}
+        if (g16 >= 31 && g16 <= 40)
+        {setAttrs({medical_g16_text: "-8 Toughness, -12 Agility"});}
+        if (g16 >= 41 && g16 <= 59)
+        {setAttrs({medical_g16_text: "Body Location damaged, -20 Toughness, -20 Agility"});}
+        if (g16 >= 60)
+        {setAttrs({medical_g16_text: "Body Location damaged, -30 Toughness, -30 Agility"});}
 
-      //Chest
-      if (g17 == 0)
-      {setAttrs({medical_g17_text: "No Effect / Healthy"});}
-      if (g17 >= 1 && g17 <= 30)
-      {setAttrs({medical_g17_text: "-5 Toughness"});}
-      if (g17 >= 31 && g17 <= 50)
-      {setAttrs({medical_g17_text: "-10 Toughness"});}
-      if (g17 >= 51 && g17 <= 70)
-      {setAttrs({medical_g17_text: "-15 Toughness, Stunned for 1D5 Rounds"});}
-      if (g17 >= 71 && g17 <= 90)
-      {setAttrs({medical_g17_text: "-20 Toughness, Stunned for 2D5 Rounds"});}
-      if (g17 >= 91 && g17 <= 110)
-      {setAttrs({medical_g17_text: "Body Location broken, damaged. -30 Toughness, Stunned for 3D5 Rounds"});}
-      if (g17 >= 111)
-      {setAttrs({medical_g17_text: "Chest collapsed or too heavily damaged for survival. Instant death"});}
+        //Chest
+        if (g17 == 0)
+        {setAttrs({medical_g17_text: "No Effect / Healthy"});}
+        if (g17 >= 1 && g17 <= 30)
+        {setAttrs({medical_g17_text: "-2 Toughness"});}
+        if (g17 >= 31 && g17 <= 50)
+        {setAttrs({medical_g17_text: "-4 Toughness"});}
+        if (g17 >= 51 && g17 <= 70)
+        {setAttrs({medical_g17_text: "-8 Toughness, Stunned for 1D5 Rounds"});}
+        if (g17 >= 71 && g17 <= 90)
+        {setAttrs({medical_g17_text: "-10 Toughness, Stunned for 2D5 Rounds"});}
+        if (g17 >= 91 && g17 <= 110)
+        {setAttrs({medical_g17_text: "Body Location broken, damaged. -15 Toughness, Stunned for 3D5 Rounds"});}
+        if (g17 >= 111)
+        {setAttrs({medical_g17_text: "Body Location Destroyed, instant death"});}
+      }
 
+
+      // --------------------------------------------------------------------------------------------------------------
+      // 5.0 standard -------------------------------------------------------------------------------------------------
+      // --------------------------------------------------------------------------------------------------------------
+      if(medical_override == 1){
+        //Finger / toe
+        if (g1 == 0)
+        {setAttrs({medical_g1_text: "No Effect / Healthy"});}
+        if (g1 >= 1 && g1 <= 30)
+        {setAttrs({medical_g1_text: "-5 WFM + WFR to Finger,-5 Agility to Toe"});}
+        if (g1 >= 31 && g1 <= 45)
+        {setAttrs({medical_g1_text: "-10 WFM and WFR to Finger, -10 Agility to Toe"});}
+        if (g1 >= 46 && g1 <= 60)
+        {setAttrs({medical_g1_text: "Body Location broken, damaged. No longer usable. -15 Strength to Finger, -15 Agility to Toe"});}
+        if (g1 >= 61)
+        {setAttrs({medical_g1_text: "Body Location Destroyed. -20 Strength to Finger, -20 Agility to Toe"});}
+
+        //Heart
+        if (g2 == 0)
+        {setAttrs({medical_g2_text: "No Effect / Healthy"});}
+        if (g2 >= 1 && g2 <= 25)
+        {setAttrs({medical_g2_text: "-10 Strength, Toughness, Agility"});}
+        if (g2 >= 26 && g2 <= 40)
+        {setAttrs({medical_g2_text: "-15 Strength, Toughness, Agility"});}
+        if (g2 >= 41 && g2 <= 55)
+        {setAttrs({medical_g2_text: "-20 Strength, Toughness, Agility"});}
+        if (g2 >= 56 && g2 <= 70)
+        {setAttrs({medical_g2_text: "-25 Strength, Toughness, Agility"});}
+        if (g2 >= 71 && g2 <= 95)
+        {setAttrs({medical_g2_text: "Body Location broken, damaged. +10 Fatigue, -30 Strength, Toughness, Agility"});}
+        if (g2 >= 96)
+        {setAttrs({medical_g2_text: "Body Location Destroyed, instant death"});}
+
+        //Neck
+        if (g3 == 0)
+        {setAttrs({medical_g3_text: "No Effect / Healthy"});}
+        if (g3 >= 1 && g3 <= 30)
+        {setAttrs({medical_g3_text: "-5 Toughness"});}
+        if (g3 >= 31 && g3 <= 50)
+        {setAttrs({medical_g3_text: "-10 Toughness"});}
+        if (g3 >= 51 && g3 <= 70)
+        {setAttrs({medical_g3_text: "-15 Toughness"});}
+        if (g3 >= 71 && g3 <= 90)
+        {setAttrs({medical_g3_text: "-20 Toughness"});}
+        if (g3 >= 91 && g3 <= 110)
+        {setAttrs({medical_g3_text: "Body Location broken, damaged. -25 Toughness, Paralyzed and Helpless"});}
+        if (g3 >= 111)
+        {setAttrs({medical_g3_text: "Body Location Destroyed, instant death"});}
+
+        //Skull / Brain
+        if (g4 == 0)
+        {setAttrs({medical_g4_text: "No Effect / Healthy"});}
+        if (g4 >= 1 && g4 <= 25)
+        {setAttrs({medical_g4_text: "-10 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 26 && g4 <= 40)
+        {setAttrs({medical_g4_text: "-15 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 41 && g4 <= 55)
+        {setAttrs({medical_g4_text: "-20 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 56 && g4 <= 70)
+        {setAttrs({medical_g4_text: "-25 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 71 && g4 <= 95)
+        {setAttrs({medical_g4_text: "Body Location broken, damaged. +10 Fatigue, -30 Perception, Intellect, Warfare Range, Warfare Melee"});}
+        if (g4 >= 96)
+        {setAttrs({medical_g4_text: "Body Location Destroyed, instant death"});}
+
+        //Nose / Ear
+        if (g5 == 0)
+        {setAttrs({medical_g5_text: "No Effect / Healthy"});}
+        if (g5 >= 1 && g5 <= 25)
+        {setAttrs({medical_g5_text: "-5 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 25 && g5 <= 40)
+        {setAttrs({medical_g5_text: "-10 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 41 && g5 <= 55)
+        {setAttrs({medical_g5_text: "-15 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 56 && g5 <= 70)
+        {setAttrs({medical_g5_text: "-20 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 71 && g5 <= 95)
+        {setAttrs({medical_g5_text: "Body Location broken, -25 Perception to Smelling or Hearing Perception Tests"});}
+        if (g5 >= 96)
+        {setAttrs({medical_g5_text: "Body Location Destroyed, cannot make Smelling Tests, or halves Perception for Hearing Tests"});}
+
+        //Limb (Arm / Leg)
+        if (g6 == 0)
+        {setAttrs({medical_g6_text: "No Effect / Healthy"});}
+        if (g6 >= 1 && g6 <= 30)
+        {setAttrs({medical_g6_text: "-5 Strength to Arm, or -5 Agility to Leg"});}
+        if (g6 >= 31 && g6 <= 50)
+        {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
+        if (g6 >= 51 && g6 <= 70)
+        {setAttrs({medical_g6_text: "-10 Strength to Arm, or -10 Agility to Leg"});}
+        if (g6 >= 71 && g6 <= 90)
+        {setAttrs({medical_g6_text: "-20 Strength to Arm, or -20 Agility to Leg"});}
+        if (g6 >= 91 && g6 <= 110)
+        {setAttrs({medical_g6_text: "Body Location damaged, -25 Strength to Arm, or -25 Agility to Leg. -20 to any Action with this limb"});}
+        if (g6 >= 111)
+        {setAttrs({medical_g6_text: "Body Location Destroyed, limb cannot be used. +3 Fatigue. Halves Strength if Arm. Halves Agility and reduces Movement Speed by an extra 2 Meters if Leg"});}
+
+        //Small / Large Intestines
+        if (g7 == 0)
+        {setAttrs({medical_g7_text: "No Effect / Healthy"});}
+        if (g7 >= 1 && g7 <= 30)
+        {setAttrs({medical_g7_text: "-5 Toughness, -5 Agility"});}
+        if (g7 >= 31 && g7 <= 50)
+        {setAttrs({medical_g7_text: "-5 Toughness, -10 Agility"});}
+        if (g7 >= 51 && g7 <= 70)
+        {setAttrs({medical_g7_text: "-10 Toughness, -15 Agility"});}
+        if (g7 >= 71 && g7 <= 90)
+        {setAttrs({medical_g7_text: "-10 Toughness, -20 Agility"});}
+        if (g7 >= 91 && g7 <= 110)
+        {setAttrs({medical_g7_text: "Body Location damaged, -15 Toughness, -15 Agility. +2 Fatigue"});}
+        if (g7 >= 111)
+        {setAttrs({medical_g7_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +10 Fatigue"});}
+
+        //Lungs
+        if (g8 == 0)
+        {setAttrs({medical_g8_text: "No Effect / Healthy"});}
+        if (g8 >= 1 && g8 <= 25)
+        {setAttrs({medical_g8_text: "-5 Toughness, Stunned for 1D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 31 && g8 <= 40)
+        {setAttrs({medical_g8_text: "-10 Toughness, Stunned for 2D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 46 && g8 <= 55)
+        {setAttrs({medical_g8_text: "-15 Toughness, Stunned for 3D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 46 && g8 <= 70)
+        {setAttrs({medical_g8_text: "-20 Toughness, Stunned for 4D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 46 && g8 <= 95)
+        {setAttrs({medical_g8_text: "Body Location damaged, -25 Toughness, Stunned for 5D5-Toughness Modifier in Rounds"});}
+        if (g8 >= 96)
+        {setAttrs({medical_g8_text: "Body Location Destroyed, -30 Toughness, Stunned for 6D5-Toughness Modifier in Rounds. Character will take 2 Wounds whenever they take a Movement Action quicker than 2 Meters per Turn"});}
+
+        //Kidney / Stomach / Liver
+        if (g9 == 0)
+        {setAttrs({medical_g9_text: "No Effect / Healthy"});}
+        if (g9 >= 1 && g9 <= 25)
+        {setAttrs({medical_g9_text: "-5 Toughness, -5 Agility"});}
+        if (g9 >= 26 && g9 <= 40)
+        {setAttrs({medical_g9_text: "-5 Toughness, -10 Agility"});}
+        if (g9 >= 41 && g9 <= 55)
+        {setAttrs({medical_g9_text: "-10 Toughness, -15 Agility"});}
+        if (g9 >= 55 && g9 <= 70)
+        {setAttrs({medical_g9_text: "-10 Toughness, -20 Agility"});}
+        if (g9 >= 71 && g9 <= 95)
+        {setAttrs({medical_g9_text: "Body Location damaged, -15 Toughness, -15 Agility. +1 Fatigue"});}
+        if (g9 >= 96)
+        {setAttrs({medical_g9_text: "Body Location Destroyed, -20 Toughness, -20 Agility. +5 Fatigue"});}
+
+        //Knee / Ankle / Shoulder / Elbow
+        if (g10 == 0)
+        {setAttrs({medical_g10_text: "No Effect / Healthy"});}
+        if (g10 >= 1 && g10 <= 30)
+        {setAttrs({medical_g10_text: "-5 Strength, -5 Agility"});}
+        if (g10 >= 31 && g10 <= 50)
+        {setAttrs({medical_g10_text: "-10 Strength, -5 Agility"});}
+        if (g10 >= 51 && g10 <= 70)
+        {setAttrs({medical_g10_text: "-10 Strength, -10 Agility"});}
+        if (g10 >= 71 && g10 <= 90)
+        {setAttrs({medical_g10_text: "-15 Strength, -10 Agility"});}
+        if (g10 >= 91 && g10 <= 110)
+        {setAttrs({medical_g10_text: "Body Location damaged, -15 Strength, -15 Agility. +1 Fatigue"});}
+        if (g10 >= 111)
+        {setAttrs({medical_g10_text: "Body Location Destroyed, -20 Strength, -20 Agility. +5 Fatigue"});}
+
+        //Eye
+        if (g11 == 0)
+        {setAttrs({medical_g11_text: "No Effect / Healthy"});}
+        if (g11 >= 1 && g11 <= 20)
+        {setAttrs({medical_g11_text: "-5 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 21 && g11 <= 30)
+        {setAttrs({medical_g11_text: "-10 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 31 && g11 <= 40)
+        {setAttrs({medical_g11_text: "-15 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 41 && g11 <= 50)
+        {setAttrs({medical_g11_text: "-20 eyesight-based Perception Tests and Warfare Tests"});}
+        if (g11 >= 51 && g11 <= 60)
+        {setAttrs({medical_g11_text: "Body Location broken, -20 eyesight-based Perception Tests and Warfare Tests. Blinded for 3D5 - Toughness Modifier in Rounds"});}
+        if (g11 >= 61)
+        {setAttrs({medical_g11_text: "Eye destroyed, cannot be used. -30 for eyesight-based Perception Tests and Warfare Tests"});}
+
+        //Mouth
+        if (g12 == 0)
+        {setAttrs({medical_g12_text: "No Effect / Healthy"});}
+        if (g12 >= 1 && g12 <= 30)
+        {setAttrs({medical_g12_text: "-5 Toughness, -5 to Speech-based Tests"});}
+        if (g12 >= 31 && g12 <= 50)
+        {setAttrs({medical_g12_text: "-5 Toughness, -10 to Speech-based Tests"});}
+        if (g12 >= 51 && g12 <= 70)
+        {setAttrs({medical_g12_text: "-10 Toughness, -15 to Speech-based Tests"});}
+        if (g12 >= 71 && g12 <= 90)
+        {setAttrs({medical_g12_text: "-10 Toughness, -20 to Speech-based Tests"});}
+        if (g12 >= 91 && g12 <= 110)
+        {setAttrs({medical_g12_text: "Body Location broken, damaged. -15 Toughness, +1 Fatigue, -25 to Speech-based Tests"});}
+        if (g12 >= 111)
+        {setAttrs({medical_g12_text: "Body Location Destroyed, -15 Toughness, +2 Fatigue, -Cannot speak"});}
+
+        //Hand
+        if (g13 == 0)
+        {setAttrs({medical_g13_text: "No Effect / Healthy"});}
+        if (g13 >= 1 && g13 <= 30)
+        {setAttrs({medical_g13_text: "-5 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 31 && g13 <= 50)
+        {setAttrs({medical_g13_text: "-10 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 46 && g13 <= 70)
+        {setAttrs({medical_g13_text: "-15 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 46 && g13 <= 90)
+        {setAttrs({medical_g13_text: "-20 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 46 && g13 <= 110)
+        {setAttrs({medical_g13_text: "Body Location broken, -25 to Warfare Melee and Warfare Range if the hand is used in the Attack"});}
+        if (g13 >= 111)
+        {setAttrs({medical_g13_text: "Body Location Destroyed, Character cannot use the hand for any Actions"});}
+
+        //Chin / Jaw / Cheek
+        if (g14 == 0)
+        {setAttrs({medical_g14_text: "No Effect / Healthy"});}
+        if (g14 >= 1 && g14 <= 30)
+        {setAttrs({medical_g14_text: "-5 Toughness"});}
+        if (g14 >= 31 && g14 <= 50)
+        {setAttrs({medical_g14_text: "-5 Toughness, -5 to Speech-based Tests"});}
+        if (g14 >= 51 && g14 <= 70)
+        {setAttrs({medical_g14_text: "-10 Toughness, -10 to Speech-based Tests"});}
+        if (g14 >= 71 && g14 <= 90)
+        {setAttrs({medical_g14_text: "-10 Toughness, +1 Fatigue, -10 to Speech-based Tests"});}
+        if (g14 >= 91 && g14 <= 110)
+        {setAttrs({medical_g14_text: "Body Location broken, damaged. -15 Toughness, +3 Fatigue, -15 to Speech-based Tests"});}
+        if (g14 >= 111)
+        {setAttrs({medical_g14_text: "Body Location Destroyed, -20 Toughness, +5 Fatigue, Cannot speak"});}
+
+        //Foot
+        if (g15 == 0)
+        {setAttrs({medical_g15_text: "No Effect / Healthy"});}
+        if (g15 >= 1 && g15 <= 30)
+        {setAttrs({medical_g15_text: "-5 to Agility when figuring Movement Speed"});}
+        if (g15 >= 31 && g15 <= 50)
+        {setAttrs({medical_g15_text: "-10 to Agility when figuring Movement Speed"});}
+        if (g15 >= 51 && g15 <= 70)
+        {setAttrs({medical_g15_text: "-15 to Agility when figuring Movement Speed"});}
+        if (g15 >= 71 && g15 <= 90)
+        {setAttrs({medical_g15_text: "-20 to Agility when figuring Movement Speed"});}
+        if (g15 >= 91 && g15 <= 110)
+        {setAttrs({medical_g15_text: "Body Location broken, -25 to Agility when figuring Movement Speed"});}
+        if (g15 >= 111)
+        {setAttrs({medical_g15_text: "Body Location Destroyed, Character cannot use the Foot for any Actions. Halves Agility"});}
+
+        //Pelvis
+        if (g16 == 0)
+        {setAttrs({medical_g16_text: "No Effect / Healthy"});}
+        if (g16 >= 1 && g16 <= 30)
+        {setAttrs({medical_g16_text: "-5 Toughness, -5 Agility"});}
+        if (g16 >= 31 && g16 <= 50)
+        {setAttrs({medical_g16_text: "-5 Toughness, -10 Agility"});}
+        if (g16 >= 51 && g16 <= 70)
+        {setAttrs({medical_g16_text: "-10 Toughness, -10 Agility"});}
+        if (g16 >= 71 && g16 <= 90)
+        {setAttrs({medical_g16_text: "-10 Toughness, -15 Agility"});}
+        if (g16 >= 91 && g16 <= 110)
+        {setAttrs({medical_g16_text: "Body Location damaged, -15 Toughness, -20 Agility"});}
+        if (g16 >= 111)
+        {setAttrs({medical_g16_text: "Body Location damaged, -20 Toughness, -30 Agility"});}
+
+        //Chest
+        if (g17 == 0)
+        {setAttrs({medical_g17_text: "No Effect / Healthy"});}
+        if (g17 >= 1 && g17 <= 30)
+        {setAttrs({medical_g17_text: "-5 Toughness"});}
+        if (g17 >= 31 && g17 <= 50)
+        {setAttrs({medical_g17_text: "-10 Toughness"});}
+        if (g17 >= 51 && g17 <= 70)
+        {setAttrs({medical_g17_text: "-15 Toughness, Stunned for 1D5 Rounds"});}
+        if (g17 >= 71 && g17 <= 90)
+        {setAttrs({medical_g17_text: "-20 Toughness, Stunned for 2D5 Rounds"});}
+        if (g17 >= 91 && g17 <= 110)
+        {setAttrs({medical_g17_text: "Body Location broken, damaged. -30 Toughness, Stunned for 3D5 Rounds"});}
+        if (g17 >= 111)
+        {setAttrs({medical_g17_text: "Chest collapsed or too heavily damaged for survival. Instant death"});}
+      }
 
 
 
