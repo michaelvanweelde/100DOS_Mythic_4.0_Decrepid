@@ -74,7 +74,7 @@
         <input name='attr_faction' type='checkbox' value='8' class='hidden hider' />
         <div><img name='logo'  src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/mythic_logo.png?raw=true' height='130' width='130' /></div>
       </div>
-      <!-- REPLACE LOGO SOURCE ONCE COMPLETE: src='images/mythic_logo.png' -->
+
       <!-- fourth column of grid: right-side fields -->
       <input name='attr_player_name' type='text' class='gs14' />
       <input name='attr_sex' type='text' class='gs15' />
@@ -1985,7 +1985,8 @@
       <option value='7'>Prelate </option>
       <option value='8'>Mgalekgolo / Hunters </option>
       <option value='9'>Promethean Knight </option>
-      <option value='10'>Dont Auto Calculate Speed And Weight</option>
+      <option value='10'>Huragok </option>
+      <option value='11'>Dont Auto Calculate Speed And Weight</option>
     </select>
     <br>
 
@@ -2994,7 +2995,7 @@
 
 
       // normal no modifiers ___________________________________________________
-      if(settings_race != 10) {
+      if(settings_race != 11) {
         setAttrs({
           half_move: (move_mod),
           full_move: (move_mod * 2),
@@ -3068,6 +3069,14 @@
             push: (5000 * 4),
             charge_move: (move_mod * 3 * 2),
             run_move: (move_mod * 6 * 2)
+          });
+        }
+
+        if(settings_race == 10) {
+          setAttrs({
+            carry: (1000),
+            lift: (1000 * 2),
+            push: (1000 * 4)
           });
         }
 
