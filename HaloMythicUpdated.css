@@ -21,6 +21,7 @@ input.sheet-background_override_switch_10:checked ~ div.sheet-background { backg
 input.sheet-background_override_switch_11:checked ~ div.sheet-background { background: #BFA52B; 	color: white;}
 input.sheet-background_override_switch_12:checked ~ div.sheet-background { background: #696969; 	color: white;}
 input.sheet-background_override_switch_13:checked ~ div.sheet-background { background: #ff00ff; 	color: black;}
+input.sheet-background_override_switch_14:checked ~ div.sheet-background { background-image: linear-gradient(#a0e050, #800020); color: white }
 
 
 
