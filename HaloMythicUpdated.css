@@ -611,8 +611,6 @@ ______________________________ start of equipment tab __________________________
 .sheet-equipment_ranged_weapons_gs26 { grid-area: rw26; 	color: white; font-size: 12px; border: none; border-bottom: 1px dotted white; }
 .sheet-equipment_ranged_weapons_gs27 { grid-area: rw27; 	color: white; font-size: 12px; padding: 0px 2px }
 .sheet-equipment_ranged_weapons_gs28 { grid-area: rw28; 	color: white; font-size: 12px; border: none; border-bottom: 1px dotted white; }
-.sheet-equipment_ranged_weapons_gs29 { grid-area: rw29; 	color: white; font-size: 12px; padding: 0px 2px }
-.sheet-equipment_ranged_weapons_gs30 { grid-area: rw30; 	color: white; font-size: 12px; border: none; border-bottom: 1px dotted white; }
 
 .sheet-equipment_ranged_weapons_grid1 {
 	align-items: center;
@@ -642,9 +640,9 @@ ______________________________ start of equipment tab __________________________
 .sheet-equipment_ranged_weapons_grid4 {
 	align-items: center;
 	display: grid;
-	grid-template-columns: auto 8% 4% 8% 4% 8% auto auto auto auto;
+	grid-template-columns: auto 12% 4% 12% 4% 12% auto auto;
 	grid-template-areas:
-	'rw21 rw22 rw23 rw24 rw25 rw26 rw27 rw28 rw29 rw30';
+	'rw21 rw22 rw23 rw24 rw25 rw26 rw27 rw28';
 }
 
 .sheet-equipment_melee_weapons_gs1 { grid-area: mw1;	color: white; font-size: 12px; padding: 0px 2px }
@@ -741,7 +739,9 @@ ______________________________ start of medical tab ____________________________
 	font-family: Saira Semi Condensed;
 }
 
-.sheet-medicalg1 {  grid-area: m1; border-top-left-radius: 10px; }
+
+
+.sheet-medicalg1 {  grid-area: m1; border-top-left-radius: 10px;}
 .sheet-medicalg2 {  grid-area: m2; }
 .sheet-medicalg3 {  grid-area: m3; border-top-right-radius: 10px; }
 .sheet-medicalg4 {  grid-area: m4; }
@@ -763,7 +763,7 @@ ______________________________ start of medical tab ____________________________
 .sheet-medical-grid {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
-	grid-template-rows: 120px 120px 120px 120px 120px 170px auto;
+	grid-template-rows: 125px 125px 125px 125px 125px 175px auto;
 	grid-template-areas:
 	'm1  m2  m3  mT'
 	'm4  m5  m6  mT'
@@ -778,6 +778,9 @@ ______________________________ start of medical tab ____________________________
 	background: #394C6A;
 	color: white;
 }
+.sheet-medical_input {width: 100% !important;}
+.sheet-medical_effect 		 {width: 110%-10 !important; height: 100px !important; font-size: 12px; font-family: arial; background-color: transparent; border: none; line-height: 15px; pointer-events: none; }
+.sheet-medical_effect_long {width: 110%-10 !important; height: 210px !important; font-size: 12px; font-family: arial; background-color: transparent; border: none; line-height: 15px; pointer-events: none; }
 .sheet-medical_h2_rollable:hover { background-color: rgb(200, 0, 0); }
 .sheet-medical_initial_label { margin-bottom: -5px; }
 .sheet-medical_table {
@@ -1041,6 +1044,7 @@ ______________________________ start of NPC sheet overrides ____________________
 	padding: 2px 2px 2px 2px;
 	color: white;
 	font-family: Saira Semi Condensed;
+	height: 110px;
 }
 
 .sheet-NPC_margin{ margin-right: 10px; }
