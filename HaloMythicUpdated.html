@@ -10,6 +10,7 @@
   <input name='attr_faction' type='radio' value='5' class='background_switch_5' display=none hidden />
   <input name='attr_faction' type='radio' value='4' class='background_switch_4' display=none hidden />
   <input name='attr_faction' type='radio' value='8' class='background_switch_8' display=none hidden />
+  <input name='attr_faction' type='radio' value='9' class='background_switch_9' display=none hidden />
 
   <input name='attr_color_override' type='radio' value='0' class='' display=none hidden checked />
   <input name='attr_color_override' type='radio' value='1' class='background_override_switch_1' display=none hidden />
@@ -24,6 +25,7 @@
   <input name='attr_color_override' type='radio' value='10' class='background_override_switch_10' display=none hidden />
   <input name='attr_color_override' type='radio' value='11' class='background_override_switch_11' display=none hidden />
   <input name='attr_color_override' type='radio' value='12' class='background_override_switch_12' display=none hidden />
+  <input name='attr_color_override' type='radio' value='13' class='background_override_switch_13' display=none hidden />
   <div class='background radius_border_heading'>
 
 
@@ -48,8 +50,9 @@
         <option value='7'>Insurrection / United Rebel Front</option>
         <option value='3'>Covenant</option>
         <option value='5'>Banished</option>
+        <option value='8'>Swords of Sangheilios</option>
         <option value='4'>Forerunner</option>
-        <option value='8'>Other</option>
+        <option value='9'>Other</option>
       </select>
       <input name='attr_soldier_type' type='text' class='gs9' />
       <input name='attr_rank' type='text' class='gs10' />
@@ -72,6 +75,8 @@
         <input name='attr_faction' type='checkbox' value='7' class='hidden hider' />
         <div><img name='logo'  src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/faction_logo_URF_.png?raw=true' height='130' width='130' /></div>
         <input name='attr_faction' type='checkbox' value='8' class='hidden hider' />
+        <div><img name='logo'  src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/faction_Logo_SOS.png?raw=true' height='130' width='130' /></div>
+        <input name='attr_faction' type='checkbox' value='9' class='hidden hider' />
         <div><img name='logo'  src='https://github.com/michaelvanweelde/Halo_Mythic_4dot0/blob/master/images/Logos/mythic_logo.png?raw=true' height='130' width='130' /></div>
       </div>
 
@@ -2039,12 +2044,13 @@
       <option value='4'>Banished    Red</option>
       <option value='5'>ONI         Blue</option>
       <option value='6'>URF         Tan</option>
-      <option value='7'>Pure        White</option>
-      <option value='8'>Darkmode    Grey</option>
-      <option value='9'>Metalic     Blue</option>
-      <option value='10'>Dull       Gold</option>
-      <option value='11'>You asked for this #696969</option>
-      <option value='12'>Far too vibrant    pink</option>
+      <option value='7'>SOS        burgundy</option>
+      <option value='8'>Pure        White</option>
+      <option value='9'>Darkmode    Grey</option>
+      <option value='10'>Metalic     Blue</option>
+      <option value='11'>Dull       Gold</option>
+      <option value='12'>You asked for this #696969</option>
+      <option value='13'>Far too vibrant    pink</option>
 
     </select>
     <br>
@@ -3763,34 +3769,6 @@
           xp_current: total - spent
         });
       });
-    });
-  });
-
-
-
-  // ___________________________________________________________________________
-  // ____________________Advancement Faction training sheet worker______________
-  // ___________________________________________________________________________
-  on('change:faction', function() {
-    getAttrs(['faction'], function(values) {
-      var new_faction = parseInt(values['faction'], 10) || 0;
-      var faction_training_human = parseInt(values['faction_training_human'], 10) || 0;
-      var faction_training_forerunner = parseInt(values['faction_training_forerunner'], 10) || 0;
-      var faction_training_covenant = parseInt(values['faction_training_covenant'], 10) || 0;
-      setAttrs({
-        faction_training_human: (0),
-        faction_training_forerunner: (0),
-        faction_training_covenant: (0)
-      });
-      if (new_faction == 2 || new_faction == 6 || new_faction == 7) {
-        setAttrs({faction_training_human: 1});
-      }
-      if (new_faction == 4) {
-        setAttrs({faction_training_forerunner: 1});
-      }
-      if (new_faction == 3 || new_faction == 5) {
-        setAttrs({faction_training_covenant: 1});
-      }
     });
   });
 
