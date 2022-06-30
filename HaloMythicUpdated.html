@@ -3800,10 +3800,48 @@
     });
   };
 
+
+
+
+
+
+
+  // ___________________________________________________________________________
+  // __________________________Compendium sheet worker__________________________
+  // ___________________________________________________________________________
+  on('clicked:testbutton', () => {
+    var newrowid = generateRowID();
+    var newrowattrs = {};
+    var y = 0;
+    const items = [
+  [
+    ["repeating_rangedweapons_","_R_weapon_name"    ,"MA5B" ],
+    ["repeating_rangedweapons_","_R_weapon_class"   ,"Rifle"],
+    ["repeating_rangedweapons_","_R_Weapon_attr"    ,"@{WFR} + @{WFR_advancement} + @{fatigue_mod}"],
+    ["repeating_rangedweapons_","_R_weapon_range"   ,"30-100m"],
+    ["repeating_rangedweapons_","_R_weapon_dam-roll","3d10"],
+    ["repeating_rangedweapons_","_R_weapon_base"    ,"1"],
+    ["repeating_rangedweapons_","_R_weapon_pierce"  ,"2"],
+    ["repeating_rangedweapons_","_R_weapon_hitmod"  ,"2"],
+    ["repeating_rangedweapons_","_R_weapon_mag"     ,"3"],
+    ["repeating_rangedweapons_","_R_weapon_mag_max" ,"4"],
+    ["repeating_rangedweapons_","_R_weapon_semi"    ,"5"],
+    ["repeating_rangedweapons_","_R_weapon_burst"   ,"6"],
+    ["repeating_rangedweapons_","_R_weapon_auto"    ,"7"],
+    ["repeating_rangedweapons_","_R_weapon_reload"  ,"8"],
+    ["repeating_rangedweapons_","_R_description"    ,"yes"],
+    ["repeating_rangedweapons_","_R_attachments"    ,"it shoots"]
+  ],
+  ];
+for (let x in items[y]) {
+  newrowattrs[items[y][x][0] + newrowid + items[y][x][1]] = items[y][x][2];
+  setAttrs(newrowattrs);
+};
+});
+
+
+
 </script>
-
-
-
 
 
 
