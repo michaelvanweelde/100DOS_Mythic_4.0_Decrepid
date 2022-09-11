@@ -27,6 +27,7 @@
   <input name='attr_color_override' type='radio' value='12' class='background_override_switch_12' display=none hidden />
   <input name='attr_color_override' type='radio' value='13' class='background_override_switch_13' display=none hidden />
   <input name='attr_color_override' type='radio' value='14' class='background_override_switch_14' display=none hidden />
+  <input name='attr_color_override' type='radio' value='15' class='background_override_switch_15' display=none hidden />
   <div class='background radius_border_heading'>
 
 
@@ -1121,7 +1122,6 @@
   <!-- ______________________________ start of tab Equipment ______________________________ -->
 
   <div class='equipment box radius_border_box ssc'>
-          <button type="action" name="act_testbutton"></button>
     <div class='equipment_divider'>
 
       <div class='equipment_ranged_weapons ssc'>
@@ -2046,11 +2046,12 @@
       <option value='7'>SOS        burgundy</option>
       <option value='8'>Pure        White</option>
       <option value='9'>Darkmode    Grey</option>
-      <option value='10'>Metalic     Blue</option>
+      <option value='10'>Metalic    Blue</option>
       <option value='11'>Dull       Gold</option>
       <option value='12'>You asked for this #696969</option>
       <option value='13'>Far too vibrant    Pink</option>
-      <option value='14'>Funky    Mango</option>
+      <option value='14'>Funky      Mango</option>
+      <option value='15'>burgundy   Purple</option>
     </select>
     <br>
 
@@ -2059,14 +2060,14 @@
       <option value='0'>4.0 and lower legacy</option>
       <option value='1'selected='selected'>5.0 standard</option>
       <option value='2'>5.1 standard placeholder</option>
-
-
     </select>
+
+
+    <br>
     <br>
 
     <h3>NPC Sheet</h3>
     <label class='text_centered bttn_top_padding'><input type='checkbox' name='attr_npc_sheet' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>NPC Sheet</span></label>
-    <br>
   </div>
 
 </div>
@@ -3811,22 +3812,22 @@
     var y = 0;
     const items = [
   [
-    ["repeating_rangedweapons_","_R_weapon_name"    ,"MA5B" ],
-    ["repeating_rangedweapons_","_R_weapon_class"   ,"Rifle"],
+    ["repeating_rangedweapons_","_R_weapon_name"    ,"M739 Light Machine Gun" ],
+    ["repeating_rangedweapons_","_R_weapon_class"   ,"Light Machine Gun"],
     ["repeating_rangedweapons_","_R_Weapon_attr"    ,"@{WFR} + @{WFR_advancement} + @{fatigue_mod}"],
     ["repeating_rangedweapons_","_R_weapon_range"   ,"30-100m"],
     ["repeating_rangedweapons_","_R_weapon_dam-roll","3d10"],
-    ["repeating_rangedweapons_","_R_weapon_base"    ,"1"],
-    ["repeating_rangedweapons_","_R_weapon_pierce"  ,"2"],
-    ["repeating_rangedweapons_","_R_weapon_hitmod"  ,"2"],
-    ["repeating_rangedweapons_","_R_weapon_mag"     ,"3"],
-    ["repeating_rangedweapons_","_R_weapon_mag_max" ,"4"],
-    ["repeating_rangedweapons_","_R_weapon_semi"    ,"5"],
-    ["repeating_rangedweapons_","_R_weapon_burst"   ,"6"],
-    ["repeating_rangedweapons_","_R_weapon_auto"    ,"7"],
-    ["repeating_rangedweapons_","_R_weapon_reload"  ,"8"],
-    ["repeating_rangedweapons_","_R_description"    ,"yes"],
-    ["repeating_rangedweapons_","_R_attachments"    ,"it shoots"]
+    ["repeating_rangedweapons_","_R_weapon_base"    ,"8"],
+    ["repeating_rangedweapons_","_R_weapon_pierce"  ,"13"],
+    ["repeating_rangedweapons_","_R_weapon_hitmod"  ,"0"],
+    ["repeating_rangedweapons_","_R_weapon_mag"     ,"72"],
+    ["repeating_rangedweapons_","_R_weapon_mag_max" ,"72"],
+    ["repeating_rangedweapons_","_R_weapon_semi"    ,"0"],
+    ["repeating_rangedweapons_","_R_weapon_burst"   ,"0"],
+    ["repeating_rangedweapons_","_R_weapon_auto"    ,"11"],
+    ["repeating_rangedweapons_","_R_weapon_reload"  ,"7"],
+    ["repeating_rangedweapons_","_R_description"    ,"Built-in Ammo Display, comes with Drum Magazine."],
+    ["repeating_rangedweapons_","_R_attachments"    ,"Maybe I'll put in more guns in a later update"]
   ],
   ];
 for (let x in items[y]) {
