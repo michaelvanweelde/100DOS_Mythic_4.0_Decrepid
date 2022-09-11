@@ -1047,6 +1047,9 @@ ______________________________ start of NPC sheet overrides ____________________
 	font-family: Saira Semi Condensed;
 	height: 110px;
 }
+.sheet-NPC_medical_header {
+	height: 50px;
+}
 
 .sheet-NPC_margin{ margin-right: 10px; }
 

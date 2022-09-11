@@ -1985,7 +1985,7 @@
       <option value='7'>Prelate </option>
       <option value='8'>Mgalekgolo / Hunters </option>
       <option value='9'>Promethean Knight </option>
-      <option value='10'>Huragok </option>
+      <option value='10'>Huragok / Engineer</option>
       <option value='11'>Dont Auto Calculate Speed And Weight</option>
     </select>
     <br>
@@ -2552,7 +2552,12 @@
       <div>
         <input name='attr_NPC_tabs' type='checkbox'  value='2' class='collapsible_entity_switch hidden' />
         <div class="collapsible_entity_block">
-          <div class='NPC_medical radius_border_top'>
+
+          <div class='NPC_medical radius_border_top NPC_medical_header'>
+            <label class='medical_initial_label'><h2 class='medical_h2 medical_h2_rollable radius_border_top'>Hit Location</h2> <button type='roll' name='button' value='@{to-gm}&{template:mythic} {{loc=[[1d100]]}}' class='hidden'></button></label>
+          </div>
+
+          <div class='NPC_medical '>
             <h3 class="radius_border_top">Finger / Toe</h3>
             <input name='attr_medical_g1' type='number' value='0' class='medical_input'/>
             <textarea name="attr_medical_g1_text" class='medical_effect'></textarea>
