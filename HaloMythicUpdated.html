@@ -1624,6 +1624,78 @@
       </div>
     </fieldset>
 
+    <br>
+
+    <div class='characteristic_spending_window equipment_header'>
+      <h3 style="border-top-left-radius: 10px">STR</h3>
+      <h3>TOU</h3>
+      <h3>AGI</h3>
+      <h3>WFR</h3>
+      <h3>WFM</h3>
+      <h3>INT</h3>
+      <h3>PER</h3>
+      <h3>CR</h3>
+      <h3>CH</h3>
+      <h3>LD</h3>
+      <label class='text_centered bttn_top_padding'><input type='checkbox' name='attr_characteristic_spending_lock' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>Apply</span></label>
+    </div>
+
+    <div class="characteristic_spending_window">
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_str_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_tou_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_agi_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_wfr_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_wfm_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_int_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_per_base' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_cr_base'  type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_ch_base'  type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_ld_base'  type='number' value='0' />
+      <h3 class="characteristic_spending_text">Base</h3>
+    </div>
+
+    <div class="characteristic_spending_window">
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_str_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_tou_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_agi_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_wfr_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_wfm_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_int_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_per_spending' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_cr_spending'  type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_ch_spending'  type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_ld_spending'  type='number' value='0' />
+      <h3 class="characteristic_spending_text">Spent</h3>
+    </div>
+
+    <div class="characteristic_spending_window">
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_str_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_tou_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_agi_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_wfr_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_wfm_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_int_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_per_extra' type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_cr_extra'  type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_ch_extra'  type='number' value='0' />
+      <input class='characteristic_spending_number' name='attr_characteristic_spending_ld_extra'  type='number' value='0' />
+      <h3 class="characteristic_spending_text">Extra</h3>
+    </div>
+
+    <div class="characteristic_spending_window">
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_str_total' value='@{characteristic_spending_str_base} + @{characteristic_spending_str_spending} + @{characteristic_spending_str_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_tou_total' value='@{characteristic_spending_tou_base} + @{characteristic_spending_tou_spending} + @{characteristic_spending_tou_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_agi_total' value='@{characteristic_spending_agi_base} + @{characteristic_spending_agi_spending} + @{characteristic_spending_agi_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_wfr_total' value='@{characteristic_spending_wfr_base} + @{characteristic_spending_wfr_spending} + @{characteristic_spending_wfr_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_wfm_total' value='@{characteristic_spending_wfm_base} + @{characteristic_spending_wfm_spending} + @{characteristic_spending_wfm_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_int_total' value='@{characteristic_spending_int_base} + @{characteristic_spending_int_spending} + @{characteristic_spending_int_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_per_total' value='@{characteristic_spending_per_base} + @{characteristic_spending_per_spending} + @{characteristic_spending_per_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_cr_total'  value='@{characteristic_spending_cr_base}  + @{characteristic_spending_cr_spending}  + @{characteristic_spending_cr_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_ch_total'  value='@{characteristic_spending_ch_base}  + @{characteristic_spending_ch_spending}  + @{characteristic_spending_ch_extra}' disabled="true" type='number'/>
+      <input class='characteristic_spending_number_total' name='attr_characteristic_spending_ld_total'  value='@{characteristic_spending_ld_base}  + @{characteristic_spending_ld_spending}  + @{characteristic_spending_ld_extra}' disabled="true" type='number'/>
+      <h3 class="characteristic_spending_text_total">Total</h3>
+    </div>
+
     <div class='training'>
       <div class='faction_training ssc auto_margin 90width radius_border'>
         <h3 class='radius_border_top'>Faction Training</h3>
@@ -2125,7 +2197,7 @@
 
   </div>
   <div class='infographic_toggles'>
-        <label><input type='checkbox' name='attr_infographic' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>Expanded I</span></label>
+    <label><input type='checkbox' name='attr_infographic' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>Expanded I</span></label>
     <label><input type='checkbox' name='attr_to-gm' value='/w gm' class='select_button hidden' /><span class='select_text'>To GM</span></label>
     <label><input type='checkbox' name='attr_inlinemod-toggle' value='?{Modifier|0}' class='select_button hidden' checked/><span class='select_text'>Inline Mod</span></label>
     <label><input type='checkbox' name='attr_npc_sheet' class='auto_margin collapsible_entity_switch select_button hidden' /><span class='select_text'>NPC Sheet</span></label>
@@ -2260,7 +2332,7 @@
     </fieldset>
   </div>
 
-<br>
+  <br>
 
   <div class="NPC_core_grid">
 
@@ -3811,7 +3883,88 @@
   };
 
 
+  // ___________________________________________________________________________
+  // __________________________Advancements stat sheet worker___________________
+  // ___________________________________________________________________________
+  on('change:characteristic_spending_lock', () => {
+    getAttrs([
+    'characteristic_spending_lock',
+    'str',
+    'tou',
+    'agi',
+    'wfr',
+    'wfm',
+    'int',
+    'per',
+    'cr',
+    'ch',
+    'ld',
+    'characteristic_spending_str_base', 'characteristic_spending_str_spending', 'characteristic_spending_str_extra',
+    'characteristic_spending_tou_base', 'characteristic_spending_tou_spending', 'characteristic_spending_tou_extra',
+    'characteristic_spending_agi_base', 'characteristic_spending_agi_spending', 'characteristic_spending_agi_extra',
+    'characteristic_spending_wfr_base', 'characteristic_spending_wfr_spending', 'characteristic_spending_wfr_extra',
+    'characteristic_spending_wfm_base', 'characteristic_spending_wfm_spending', 'characteristic_spending_wfm_extra',
+    'characteristic_spending_int_base', 'characteristic_spending_int_spending', 'characteristic_spending_int_extra',
+    'characteristic_spending_per_base', 'characteristic_spending_per_spending', 'characteristic_spending_per_extra',
+    'characteristic_spending_cr_base', 'characteristic_spending_cr_spending', 'characteristic_spending_cr_extra',
+    'characteristic_spending_ch_base', 'characteristic_spending_ch_spending', 'characteristic_spending_ch_extra',
+    'characteristic_spending_ld_base', 'characteristic_spending_ld_spending', 'characteristic_spending_ld_extra',
+    ], function(values) {
+      var str_base     = parseInt(values['characteristic_spending_str_base'], 10) || 0;
+      var str_spending = parseInt(values['characteristic_spending_str_spending'], 10) || 0;
+      var str_extra    = parseInt(values['characteristic_spending_str_extra'], 10) || 0;
 
+      var tou_base     = parseInt(values['characteristic_spending_tou_base'], 10) || 0;
+      var tou_spending = parseInt(values['characteristic_spending_tou_spending'], 10) || 0;
+      var tou_extra    = parseInt(values['characteristic_spending_tou_extra'], 10) || 0;
+
+      var agi_base     = parseInt(values['characteristic_spending_agi_base'], 10) || 0;
+      var agi_spending = parseInt(values['characteristic_spending_agi_spending'], 10) || 0;
+      var agi_extra    = parseInt(values['characteristic_spending_agi_extra'], 10) || 0;
+
+      var wfr_base     = parseInt(values['characteristic_spending_wfr_base'], 10) || 0;
+      var wfr_spending = parseInt(values['characteristic_spending_wfr_spending'], 10) || 0;
+      var wfr_extra    = parseInt(values['characteristic_spending_wfr_extra'], 10) || 0;
+
+      var wfm_base     = parseInt(values['characteristic_spending_wfm_base'], 10) || 0;
+      var wfm_spending = parseInt(values['characteristic_spending_wfm_spending'], 10) || 0;
+      var wfm_extra    = parseInt(values['characteristic_spending_wfm_extra'], 10) || 0;
+
+      var int_base     = parseInt(values['characteristic_spending_int_base'], 10) || 0;
+      var int_spending = parseInt(values['characteristic_spending_int_spending'], 10) || 0;
+      var int_extra    = parseInt(values['characteristic_spending_int_extra'], 10) || 0;
+
+      var per_base     = parseInt(values['characteristic_spending_per_base'], 10) || 0;
+      var per_spending = parseInt(values['characteristic_spending_per_spending'], 10) || 0;
+      var per_extra    = parseInt(values['characteristic_spending_per_extra'], 10) || 0;
+
+      var cr_base     = parseInt(values['characteristic_spending_cr_base'], 10) || 0;
+      var cr_spending = parseInt(values['characteristic_spending_cr_spending'], 10) || 0;
+      var cr_extra    = parseInt(values['characteristic_spending_cr_extra'], 10) || 0;
+
+      var ch_base     = parseInt(values['characteristic_spending_ch_base'], 10) || 0;
+      var ch_spending = parseInt(values['characteristic_spending_ch_spending'], 10) || 0;
+      var ch_extra    = parseInt(values['characteristic_spending_ch_extra'], 10) || 0;
+
+      var ld_base     = parseInt(values['characteristic_spending_ld_base'], 10) || 0;
+      var ld_spending = parseInt(values['characteristic_spending_ld_spending'], 10) || 0;
+      var ld_extra    = parseInt(values['characteristic_spending_ld_extra'], 10) || 0;
+
+      setAttrs({
+        str: str_base + str_spending + str_extra,
+        tou: tou_base + tou_spending + tou_extra,
+        agi: agi_base + agi_spending + agi_extra,
+        wfr: wfr_base + wfr_spending + wfr_extra,
+        wfm: wfm_base + wfm_spending + wfm_extra,
+        int: int_base + int_spending + int_extra,
+        per: per_base + per_spending + per_extra,
+        cr: cr_base + cr_spending + cr_extra,
+        ch: ch_base + ch_spending + ch_extra,
+        ld: ld_base + ld_spending + ld_extra,
+        characteristic_spending_lock: 0
+      });
+    });
+  });
 
 
 
@@ -3821,35 +3974,35 @@
   // ___________________________________________________________________________
   on('clicked:testbutton', () => {
     getAttrs([''], function(values) {
-    var newrowid = generateRowID();
-    var newrowattrs = {};
-    var y = 0;
-    const items = [
-  [
-    ["repeating_rangedweapons_","_R_weapon_name"    ,"M739 Light Machine Gun" ],
-    ["repeating_rangedweapons_","_R_weapon_class"   ,"Light Machine Gun"],
-    ["repeating_rangedweapons_","_R_Weapon_attr"    ,"@{WFR} + @{WFR_advancement} + @{fatigue_mod}"],
-    ["repeating_rangedweapons_","_R_weapon_range"   ,"30-100m"],
-    ["repeating_rangedweapons_","_R_weapon_dam-roll","3d10"],
-    ["repeating_rangedweapons_","_R_weapon_base"    ,"8"],
-    ["repeating_rangedweapons_","_R_weapon_pierce"  ,"13"],
-    ["repeating_rangedweapons_","_R_weapon_hitmod"  ,"0"],
-    ["repeating_rangedweapons_","_R_weapon_mag"     ,"72"],
-    ["repeating_rangedweapons_","_R_weapon_mag_max" ,"72"],
-    ["repeating_rangedweapons_","_R_weapon_semi"    ,"0"],
-    ["repeating_rangedweapons_","_R_weapon_burst"   ,"0"],
-    ["repeating_rangedweapons_","_R_weapon_auto"    ,"11"],
-    ["repeating_rangedweapons_","_R_weapon_reload"  ,"7"],
-    ["repeating_rangedweapons_","_R_description"    ,"Built-in Ammo Display, comes with Drum Magazine."],
-    ["repeating_rangedweapons_","_R_attachments"    ,"Maybe I'll put in more guns in a later update"]
-  ]
-  ];
-for (let x in items[y]) {
-  newrowattrs[items[y][x][0] + newrowid + items[y][x][1]] = items[y][x][2];
-  setAttrs(newrowattrs);
-};
-});
-});
+      var newrowid = generateRowID();
+      var newrowattrs = {};
+      var y = 0;
+      const items = [
+      [
+      ["repeating_rangedweapons_","_R_weapon_name"    ,"M739 Light Machine Gun" ],
+      ["repeating_rangedweapons_","_R_weapon_class"   ,"Light Machine Gun"],
+      ["repeating_rangedweapons_","_R_Weapon_attr"    ,"@{WFR} + @{WFR_advancement} + @{fatigue_mod}"],
+      ["repeating_rangedweapons_","_R_weapon_range"   ,"30-100m"],
+      ["repeating_rangedweapons_","_R_weapon_dam-roll","3d10"],
+      ["repeating_rangedweapons_","_R_weapon_base"    ,"8"],
+      ["repeating_rangedweapons_","_R_weapon_pierce"  ,"13"],
+      ["repeating_rangedweapons_","_R_weapon_hitmod"  ,"0"],
+      ["repeating_rangedweapons_","_R_weapon_mag"     ,"72"],
+      ["repeating_rangedweapons_","_R_weapon_mag_max" ,"72"],
+      ["repeating_rangedweapons_","_R_weapon_semi"    ,"0"],
+      ["repeating_rangedweapons_","_R_weapon_burst"   ,"0"],
+      ["repeating_rangedweapons_","_R_weapon_auto"    ,"11"],
+      ["repeating_rangedweapons_","_R_weapon_reload"  ,"7"],
+      ["repeating_rangedweapons_","_R_description"    ,"Built-in Ammo Display, comes with Drum Magazine."],
+      ["repeating_rangedweapons_","_R_attachments"    ,"Maybe I'll put in more guns in a later update"]
+      ]
+      ];
+      for (let x in items[y]) {
+        newrowattrs[items[y][x][0] + newrowid + items[y][x][1]] = items[y][x][2];
+        setAttrs(newrowattrs);
+      };
+    });
+  });
 
 
 

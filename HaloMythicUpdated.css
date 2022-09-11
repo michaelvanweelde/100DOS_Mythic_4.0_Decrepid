@@ -826,6 +826,16 @@ ______________________________ start of advancements tab _______________________
 	'e1 e2 e3 e0 e4 e5 e6';
 }
 
+.sheet-characteristic_spending_number{width: 100%!important; text-align: center; text-indent: 18px;}
+.sheet-characteristic_spending_number_total{width: 100%!important; text-align: center; text-indent: 18px; background-color: black !important;}
+.sheet-characteristic_spending_text{border-right: 2px solid #475f85}
+.sheet-characteristic_spending_text_total{border-right: 2px solid #475f85; border-bottom: 2px solid #475f85; border-bottom-right-radius: 10px}
+
+.sheet-characteristic_spending_window{
+	display: grid;
+	grid-template-columns: 9% 9% 9% 9% 9% 9% 9% 9% 9% 9% auto;
+}
+
 .sheet-faction_training { grid-area: t1; padding: 2px; background: #475f85; }
 .sheet-weapon_training {  grid-area: t2; padding: 2px; background: #475f85; }
 .sheet-training {
