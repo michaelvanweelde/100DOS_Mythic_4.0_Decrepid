@@ -1269,36 +1269,40 @@
     <br>
 
     <div class='equipment_gear equipment_header'>
-      <div class='equipment_gear_gs1'>Gear / Item Name</div>
-      <div class='equipment_gear_gs2'>Amount</div>
-      <div class='equipment_gear_gs3'>Value</div>
-      <div class='equipment_gear_gs4'>Weight</div>
-      <div class='equipment_gear_gs5'>B Pts</div>
-      <div class='equipment_gear_gs6'>Page #</div>
+      <div class='equipment_gear_gs2'>Gear / Item Name</div>
+      <div class='equipment_gear_gs3'>Amount</div>
+      <div class='equipment_gear_gs4'>Value</div>
+      <div class='equipment_gear_gs5'>Weight</div>
+      <div class='equipment_gear_gs6'>B Pts</div>
+      <div class='equipment_gear_gs7'>Page #</div>
     </div>
+
     <div class='equipment_gear'>
-      <input name='attr_gear_name' type='text' placeholder='Gear / Item Name' class='equipment_gear_gs1' />
-      <input name='attr_gear_quantity' type='text' value='1' placeholder='Amount' class='equipment_gear_gs2' />
-      <input name='attr_gear_cost' type='text' value='0' class='equipment_gear_gs3' />
-      <input name='attr_gear_weight' type='text' value='0' class='equipment_gear_gs4' />
-      <input name='attr_gear_bp' type='text' placeholder='Break Points' class='equipment_gear_gs5' />
-      <input name='attr_gear_pg#' type='text' placeholder='Page #' class='equipment_gear_gs6' />
-      <label class='margin_adjust equipment_gear_gs7'><input type='checkbox' name='attr_collapse' value='7' class='collapsible_entity_switch select_button hidden'><span class='select_text'>▼</span></label>
+      <label class='equipment_gear_gs1'><input type='checkbox' checked name='attr_gear_carried' value='1' class='select_button hidden'/><span class='select_text'>&nbsp;✔&nbsp;</span></label>
+      <input name='attr_gear_name' type='text' placeholder='Gear / Item Name' class='equipment_gear_gs2' />
+      <input name='attr_gear_quantity' type='text' value='1' placeholder='Amount' class='equipment_gear_gs3' />
+      <input name='attr_gear_cost' type='text' value='0' class='equipment_gear_gs4' />
+      <input name='attr_gear_weight' type='text' value='0' class='equipment_gear_gs5' />
+      <input name='attr_gear_bp' type='text' placeholder='Break Points' class='equipment_gear_gs6' />
+      <input name='attr_gear_pg#' type='text' placeholder='Page #' class='equipment_gear_gs7' />
+      <label class='margin_adjust equipment_gear_gs8'><input type='checkbox' name='attr_collapse' value='7' class='collapsible_entity_switch select_button hidden'><span class='select_text'>▼</span></label>
     </div>
     <input name='attr_collapse' type='checkbox'  value='7' class='collapsible_entity_switch hidden' />
-    <textarea name='attr_gear_desc' placeholder='Different equipment will have special rules.' class='collapsible_entity_block auto_margin 90width'></textarea>
+    <textarea name='attr_gear_desc' placeholder='Different equipment will have special rules.' class='collapsible_entity_block equipment_gear_dropdown'></textarea>
+
     <fieldset name='gear' class='repeating_gear'>
       <div class='equipment_gear'>
-        <input name='attr_gear_name_r' type='text' placeholder='Gear / Item Name' class='equipment_gear_gs1' />
-        <input name='attr_gear_quantity_r' type='text' value='1' placeholder='Amount' class='equipment_gear_gs2' />
-        <input name='attr_gear_cost_r' type='text' value='0' class='equipment_gear_gs3' />
-        <input name='attr_gear_weight_r' type='text' value='0' class='equipment_gear_gs4' />
-        <input name='attr_gear_bp_r' type='text' placeholder='Break Points' class='equipment_gear_gs5' />
-        <input name='attr_gear_pg#_r' type='text' placeholder='Page #' class='equipment_gear_gs6' />
-        <label class='margin_adjust equipment_gear_gs7'><input type='checkbox' name='attr_collapse_r' value='2' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>▼</span></label>
+        <label class='equipment_gear_gs1'><input type='checkbox' checked name='attr_gear_carried_r' value='1' class='select_button hidden'/><span class='select_text'>&nbsp;✔&nbsp;</span></label>
+        <input name='attr_gear_name_r' type='text' placeholder='Gear / Item Name' class='equipment_gear_gs2' />
+        <input name='attr_gear_quantity_r' type='text' value='1' placeholder='Amount' class='equipment_gear_gs3' />
+        <input name='attr_gear_cost_r' type='text' value='0' class='equipment_gear_gs4' />
+        <input name='attr_gear_weight_r' type='text' value='0' class='equipment_gear_gs5' />
+        <input name='attr_gear_bp_r' type='text' placeholder='Break Points' class='equipment_gear_gs6' />
+        <input name='attr_gear_pg#_r' type='text' placeholder='Page #' class='equipment_gear_gs7' />
+        <label class='margin_adjust equipment_gear_gs8'><input type='checkbox' name='attr_collapse_r' value='2' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>▼</span></label>
       </div>
       <input name='attr_collapse_r' type='checkbox'  value='2' class='collapsible_entity_switch hidden' />
-      <textarea name='attr_attachments' class='collapsible_entity_block auto_margin 90width'></textarea>
+      <textarea name='attr_attachments' class='collapsible_entity_block equipment_gear_dropdown'></textarea>
     </fieldset>
     <br>
 
@@ -3155,20 +3159,22 @@
   // ____________________gear cost/weight sheet worker__________________________
   // ___________________________________________________________________________
 
-  on('change:gear_weight change:gear_cost change:gear_quantity change:repeating_gear remove:repeating_gear', () => {
+  on('change:gear_weight change:gear_cost change:gear_quantity change:gear_carried change:repeating_gear remove:repeating_gear', () => {
     getSectionIDs(`repeating_gear`, idArray => {
+      const fieldset_carried = [];
       const fieldset_cost = [];
       const fieldset_weight = [];
       const fieldset_quantity = [];
+      idArray.forEach(id => fieldset_carried.push (`repeating_gear_${id}_gear_carried_r`));
       idArray.forEach(id => fieldset_cost.push (`repeating_gear_${id}_gear_cost_r`));
       idArray.forEach(id => fieldset_weight.push (`repeating_gear_${id}_gear_weight_r`));
       idArray.forEach(id => fieldset_quantity.push (`repeating_gear_${id}_gear_quantity_r`));
-      getAttrs(['weight_total', 'gear_weight', 'credit_total', 'gear_cost', 'gear_quantity', ...fieldset_weight, ...fieldset_cost, ...fieldset_quantity], v => {
+      getAttrs(['weight_total', 'gear_weight', 'credit_total', 'gear_cost', 'gear_quantity', 'gear_carried', ...fieldset_weight, ...fieldset_cost, ...fieldset_quantity, ...fieldset_carried], v => {
         const getValue = (id, field) => parseFloat(v[`repeating_gear_${id}_${field}`]) || 0
         const credit_base = parseFloat(v.gear_cost) * parseFloat(v.gear_quantity)
-        const credit_repeating = idArray.reduce((total, id) => total + (getValue(id, 'gear_cost_r') * getValue(id, 'gear_quantity_r')), 0)
-        const weight_base = parseFloat(v.gear_weight) * parseFloat(v.gear_quantity)
-        const weight_repeating = idArray.reduce((total, id) => total + (getValue(id, 'gear_weight_r') * getValue(id, 'gear_quantity_r')), 0)
+        const credit_repeating = idArray.reduce((total, id) => total + (getValue(id, 'gear_cost_r') * getValue(id, 'gear_quantity_r') ), 0)
+        const weight_base = parseFloat(v.gear_weight) * parseFloat(v.gear_quantity) * parseFloat(v.gear_carried)
+        const weight_repeating = idArray.reduce((total, id) => total + (getValue(id, 'gear_weight_r') * getValue(id, 'gear_quantity_r') * getValue(id, 'gear_carried_r')), 0)
         setAttrs({
           credit_total: credit_base + credit_repeating,
           weight_total: weight_base + weight_repeating

@@ -677,17 +677,19 @@ ______________________________ start of equipment tab __________________________
 	'mw11 mw12 mw13 mw14';
 }
 
-.sheet-equipment_gear_gs1 { grid-area: eg1; width: 100%; text-align: center; align-self: center; }
+.sheet-equipment_gear_dropdown {margin-left: 0px;}
+.sheet-equipment_gear_gs1 { grid-area: eg1; width: 100%; text-align: center; align-self: center; margin-bottom: 0px; font-size: 16px}
 .sheet-equipment_gear_gs2 { grid-area: eg2; width: 100%; text-align: center; align-self: center; }
 .sheet-equipment_gear_gs3 { grid-area: eg3; width: 100%; text-align: center; align-self: center; }
 .sheet-equipment_gear_gs4 { grid-area: eg4; width: 100%; text-align: center; align-self: center; }
 .sheet-equipment_gear_gs5 { grid-area: eg5; width: 100%; text-align: center; align-self: center; }
 .sheet-equipment_gear_gs6 { grid-area: eg6; width: 100%; text-align: center; align-self: center; }
-.sheet-equipment_gear_gs7 { margin-top: 5px !important; }
+.sheet-equipment_gear_gs7 { grid-area: eg7; width: 100%; text-align: center; align-self: center; }
+.sheet-equipment_gear_gs8 { margin-top: 5px !important; font-size: 16px}
 .sheet-equipment_gear {
 	display: grid;
 	padding-right: 2px;
-	grid-template-columns: auto 60px 80px 80px 80px 80px 25px;
+	grid-template-columns: 28px auto 60px 80px 80px 80px 80px 25px;
 	grid-template-areas:
 	'eg1 eg2 eg3 eg4 eg5 eg6 eg7';
 }
