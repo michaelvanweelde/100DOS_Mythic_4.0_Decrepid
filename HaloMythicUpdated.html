@@ -1093,9 +1093,9 @@
     <br>
 
 
-
-    <h2>Abilities</h2>
-    <p class='abilities_checkbox_pointer'><b>Expand or collapse ability's descriptor block ⯆</b></p>
+    <div class='equipment_header'>
+    <h3 style="text-indent: -50px" class="radius_border_top">Abilities</h3>
+    </div>
     <div class='edge_padding ssc'>
       <input name='attr_ability' type='text' placeholder='SQUAD UP' class='full_width_49px' />
       <label class='margin_adjust'><input type='checkbox' name='attr_collapse' value='2' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>▼</span></label>
@@ -1624,6 +1624,30 @@
       </div>
     </fieldset>
 
+    <div class='training'>
+      <div class='faction_training ssc auto_margin 90width radius_border'>
+        <h3 class='radius_border_top'>Faction Training</h3>
+        <div class='faction_training_grid'>
+          <div class='faction_training_grid_g1'><input name='attr_faction_training_human' type='checkbox' value='1'>U.N.S.C.</div>
+          <div class='faction_training_grid_g2'><input name='attr_faction_training_forerunner' type='checkbox' value='1'>Forerunner</div>
+          <div class='faction_training_grid_g3'><input name='attr_faction_training_covenant' type='checkbox' value='1'>Covenant / Banished</div>
+        </div>
+      </div>
+      <div class='weapon_training ssc auto_margin 90width radius_border'>
+        <h3 class='radius_border_top'>Weapon Training</h3>
+        <div class='weapon_training_grid'>
+          <div><input name='attr_weapons_training_basic' type='checkbox' />Basic</div>
+          <div><input name='attr_weapons_training_infantry' type='checkbox' />Infantry</div>
+          <div><input name='attr_weapons_training_vehicle' type='checkbox' />Vehicle</div>
+          <div><input name='attr_weapons_training_melee' type='checkbox' />Melee</div>
+          <div><input name='attr_weapons_training_heavy' type='checkbox' />Heavy</div>
+          <div><input name='attr_weapons_training_special' type='checkbox' />Advanced</div>
+          <div><input name='attr_weapons_training_long-range' type='checkbox' />Long-Range</div>
+          <div><input name='attr_weapons_training_explosives' type='checkbox' />Explosives</div>
+        </div>
+      </div>
+    </div>
+
     <br>
 
     <div class='characteristic_spending_window equipment_header'>
@@ -1696,29 +1720,27 @@
       <h3 class="characteristic_spending_text_total">Total</h3>
     </div>
 
-    <div class='training'>
-      <div class='faction_training ssc auto_margin 90width radius_border'>
-        <h3 class='radius_border_top'>Faction Training</h3>
-        <div class='faction_training_grid'>
-          <div class='faction_training_grid_g1'><input name='attr_faction_training_human' type='checkbox' value='1'>U.N.S.C.</div>
-          <div class='faction_training_grid_g2'><input name='attr_faction_training_forerunner' type='checkbox' value='1'>Forerunner</div>
-          <div class='faction_training_grid_g3'><input name='attr_faction_training_covenant' type='checkbox' value='1'>Covenant / Banished</div>
-        </div>
-      </div>
-      <div class='weapon_training ssc auto_margin 90width radius_border'>
-        <h3 class='radius_border_top'>Weapon Training</h3>
-        <div class='weapon_training_grid'>
-          <div><input name='attr_weapons_training_basic' type='checkbox' />Basic</div>
-          <div><input name='attr_weapons_training_infantry' type='checkbox' />Infantry</div>
-          <div><input name='attr_weapons_training_vehicle' type='checkbox' />Vehicle</div>
-          <div><input name='attr_weapons_training_melee' type='checkbox' />Melee</div>
-          <div><input name='attr_weapons_training_heavy' type='checkbox' />Heavy</div>
-          <div><input name='attr_weapons_training_special' type='checkbox' />Advanced</div>
-          <div><input name='attr_weapons_training_long-range' type='checkbox' />Long-Range</div>
-          <div><input name='attr_weapons_training_explosives' type='checkbox' />Explosives</div>
-        </div>
-      </div>
+    <br>
+
+    <div class='equipment_header'>
+    <h3 style="text-indent: -50px" class="radius_border_top">Abilities</h3>
     </div>
+    <div class='edge_padding ssc'>
+      <input name='attr_ability' type='text' placeholder='SQUAD UP' class='full_width_49px' />
+      <label class='margin_adjust'><input type='checkbox' name='attr_collapse' value='2' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>▼</span></label>
+      <label class='margin_adjust2'><button type='roll' value='@{to-gm}&{template:mythic} {{name=@{ability} }} {{description=@{ability_desc} }}' class='hidden'></button><span class='select_text'>❖</span></label>
+      <input name='attr_collapse' type='checkbox'  value='2' class='collapsible_entity_switch hidden' />
+      <textarea name='attr_ability_desc' class='collapsible_entity_block'
+      placeholder='Prerequisites: Race Human, Faction Type U.N.S.C. Military Branch&#10;&#10;Benefit: When with others from the Army, Marine, Air Force, Navy, ORION, ODST, Militiaman, and Spartan IV Soldier Types: these characters gain a +5 Bonus to Courage. The Characters also gain a +10 Bonus to Warfare Melee and Warfare Range Tests when taking Combined Actions.'></textarea>
+      <fieldset name='abilities' class='repeating_abilities'>
+        <input name='attr_ability_r' type='text' placeholder='Name' class='full_width_49px' />
+        <label class='margin_adjust'><input type='checkbox' name='attr_collapse' value='3' class='collapsible_entity_switch select_button hidden' /><span class='select_text '>▼</span></label>
+        <label class='margin_adjust2'><button type='roll' value='@{to-gm}&{template:mythic} {{name=@{ability_r} }} {{description=@{ability_desc_r} }}' class='hidden'></button><span class='select_text'>❖</span></label>
+        <input name='attr_collapse' type='checkbox'  value='3' class='collapsible_entity_switch hidden' />
+        <textarea name='attr_ability_desc_r' class='collapsible_entity_block'></textarea>
+      </fieldset>
+    </div>
+
 
   </div>
 

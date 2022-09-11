@@ -696,7 +696,7 @@ ______________________________ start of equipment tab __________________________
 
 .sheet-equipment_header {
 	background: #394C6A;
-	border: 2px solid #475f85;
+	border: 3px solid #475f85;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
 	font-family: Orbitron;
@@ -828,8 +828,8 @@ ______________________________ start of advancements tab _______________________
 
 .sheet-characteristic_spending_number{width: 100%!important; text-align: center; text-indent: 18px;}
 .sheet-characteristic_spending_number_total{width: 100%!important; text-align: center; text-indent: 18px; background-color: black !important;}
-.sheet-characteristic_spending_text{border-right: 2px solid #475f85}
-.sheet-characteristic_spending_text_total{border-right: 2px solid #475f85; border-bottom: 2px solid #475f85; border-bottom-right-radius: 10px}
+.sheet-characteristic_spending_text{border-right: 3px solid #475f85}
+.sheet-characteristic_spending_text_total{border-right: 3px solid #475f85; border-bottom: 3px solid #475f85; border-bottom-right-radius: 10px}
 
 .sheet-characteristic_spending_window{
 	display: grid;
