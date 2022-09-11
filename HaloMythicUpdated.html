@@ -2072,6 +2072,8 @@
 
     <h3>NPC Sheet</h3>
     <label class='text_centered bttn_top_padding'><input type='checkbox' name='attr_npc_sheet' class='collapsible_entity_switch select_button hidden' /><span class='select_text'>NPC Sheet</span></label>
+
+
   </div>
 
 </div>
@@ -3818,6 +3820,7 @@
   // __________________________Compendium sheet worker__________________________
   // ___________________________________________________________________________
   on('clicked:testbutton', () => {
+    getAttrs([''], function(values) {
     var newrowid = generateRowID();
     var newrowattrs = {};
     var y = 0;
@@ -3839,13 +3842,15 @@
     ["repeating_rangedweapons_","_R_weapon_reload"  ,"7"],
     ["repeating_rangedweapons_","_R_description"    ,"Built-in Ammo Display, comes with Drum Magazine."],
     ["repeating_rangedweapons_","_R_attachments"    ,"Maybe I'll put in more guns in a later update"]
-  ],
+  ]
   ];
 for (let x in items[y]) {
   newrowattrs[items[y][x][0] + newrowid + items[y][x][1]] = items[y][x][2];
   setAttrs(newrowattrs);
 };
 });
+});
+
 
 
 
